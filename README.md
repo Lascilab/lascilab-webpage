@@ -25,3 +25,30 @@ We're using a sqlite database, if you want to insert any data, please go to loca
 username: lascilab
 password: lascilab2015
 
+## Modifying template
+If you're not familiar with django template system, take a look  [here](https://docs.djangoproject.com/en/1.8/topics/templates/)
+
+Now, all static data is in static folder, by now where just have css folder inside, but you can add whatever you want (i.e js, img, plugins, fonts, etc)
+
+
+Where using template's inheritance, base.html is located at templates/base.html.
+
+Every single app has his own templates folder, and is located at appfolder/templates/appname
+
+## Modifying template
+If you're not familiar with django model system, take a look 
+[here](https://docs.djangoproject.com/en/1.8/topics/db/models/)
+
+If you want to make changes to models, and reflex in database, please do
+```
+./manage.py makemigrations appname
+./manage.py migrate
+```
+
+Please: **DO NOT REMOVE MIGRATIONS FOLDERS!!!**
+
+if migration proccess wont work, take a look to error log, is porobably an error to blame yourself 
+> Tip: if you'rea adding a new field, use `blank=True, null=True` to avoid null reference database errors
+
+Enjoy Coding!
+
