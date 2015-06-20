@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    Laboratorio de redes
+{% endblock %}
+{% block content %}
+<h1>Página web del laboratorio de redes</h1>
+    <ul>
+        <li><a href="{% url 'index-activities' %}">Actividades</a></li>
+        <li><a href="{% url 'index-courses' %}">Cursos</a></li>
+        <li><a href="{% url 'index-members' %}">Miembros</a></li>
+        <li><a href="{% url 'index-projects' %}">Proyectos</a></li>
+        <li><a href="{% url 'index-research' %}">Investigación</a></li>
+        <li><a href="{% url 'index-resources' %}">Recursos</a></li>
+        <li><a href="{% url 'index-thesis' %}">Tesis</a></li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="es">
+    <meta charset="UTF-8">
+    <!--Mobile optimized -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+{% block static-css %}
+    <!-- Static Styles -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+
+
+{% endblock %}
+{% block specific-css %}
+{% endblock %}
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+
+<body  class="cyan lighten-5">
+
+{% block content %}
+
+{% endblock %}
+{% block static-js %}
+
+{% endblock %}
+{% block specific-js %}
+{% endblock %}
+</body>
+</html>
