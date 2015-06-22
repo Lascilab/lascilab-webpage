@@ -13,6 +13,15 @@ mkvirtualenv network_lab # create virtualenv
 pip install requirements.txt # install requirements
 ```
 
+if you get this error
+```
+InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail.
+```
+Use this command
+```
+pip install requests[security]
+```
+
 now  go to project folder and then
 
 `./manage.py runserver`
