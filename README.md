@@ -10,7 +10,7 @@ sudo apt-get install python-dev python-pip #install Python Dev Tools and Python 
 sudo pip install virtualenv virtualenvwrapper  # Install virtualenv
 source /usr/local/bin/virtualenvwrapper.sh # add virtualenv functions to path
 mkvirtualenv network_lab # create virtualenv
-pip install requirements.txt # install requirements
+pip install -r requirements.txt # install requirements
 ```
 
 if you get this error
