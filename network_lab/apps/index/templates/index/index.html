@@ -14,46 +14,45 @@
             <!-- end content-bg -->
             <!-- begin container -->
             <div class="container home-content">
-                <h1></h1>
-                <h3>redes fuck Yeah</h3>
+                <h1 class="text-theme">Laboratorio de redes y sistemas distribuidos</h1>
+                <h3>Computación de alto rendimiento, Sistemas distribuidos, Virtualización, Aprovisionamiento y Más</h3>
                 <p>
-                    breve descripcion
+
                 </p>
             </div>
             <!-- end container -->
         </div>
         <!-- end #home -->
 
-        <!-- begin #about -->
-        <div id="actividades" class="content" data-scrollview="true">
-            <!-- begin container -->
-            <div class="container" data-animation="true" data-animation-type="fadeInDown">
-                <h2 class="content-title">Activities</h2>
-                <p class="content-desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br />
-                    sed bibendum turpis luctus eget
-                </p>
-            </div>
-            <!-- begin #quote -->
-            <div id="quote" class="content bg-black-darker has-bg" data-scrollview="true">
-                <!-- begin content-bg -->
-                <div class="content-bg">
-                    <img src="{% static 'vendor/color_admin_v1.7/img/quote-bg.jpg' %}" alt="Quote" />
-                </div>
-                <!-- end content-bg -->
-            </div>
-            <!-- end #quote -->
-        </div>
-        <!-- end #about -->
+{#        <!-- begin #about -->#}
+{#        <div id="actividades" class="content" data-scrollview="true">#}
+{#            <!-- begin container -->#}
+{#            <div class="container" data-animation="true" data-animation-type="fadeInDown">#}
+{#                <h2 class="content-title">Activities</h2>#}
+{#                <p class="content-desc">#}
+{#                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br />#}
+{#                    sed bibendum turpis luctus eget#}
+{#                </p>#}
+{#            </div>#}
+{#            <!-- begin #quote -->#}
+{#            <div id="quote" class="content bg-black-darker has-bg" data-scrollview="true">#}
+{#                <!-- begin content-bg -->#}
+{#                <div class="content-bg">#}
+{#                    <img src="{% static 'vendor/color_admin_v1.7/img/quote-bg.jpg' %}" alt="Quote" />#}
+{#                </div>#}
+{#                <!-- end content-bg -->#}
+{#            </div>#}
+{#            <!-- end #quote -->#}
+{#        </div>#}
+{#        <!-- end #about -->#}
 
         <!-- begin #team -->
         <div id="team" class="content" data-scrollview="true">
             <!-- begin container -->
             <div class="container">
-                <h2 class="content-title">INTEGRANTES</h2>
+                <h2 class="content-title">Integrantes</h2>
                 <p class="content-desc">
-                    Phasellus suscipit nisi hendrerit metus pharetra dignissim. Nullam nunc ante, viverra quis<br />
-                    ex non, porttitor iaculis nisi.
+                    Algunos de los integrantes activos de nuestro laboratorio
                 </p>
                 <!-- begin row -->
                 <div class="row">
@@ -64,16 +63,58 @@
                         <!-- begin team -->
                         <div class="team">
                             <div class="image" data-animation="true" data-animation-type="flipInX">
-                                <img src="assets/img/user-2.jpg" alt="Jonny Cash" />
+                                <img src="{% static 'img/2015_JohnSanabria.jpg' %}" class="img-responsive"  style="max-width: 200px"  alt="John Sanabria" />
                             </div>
                             <div class="info">
-                                <h3 class="name">Johnny Cash</h3>
-                                <div class="title text-theme">WEB DEVELOPER</div>
-                                <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                                <h3 class="name">John Alexander Sanabria Ordóñez</h3>
+                                <div class="title text-theme">Doctor en Sistemas</div>
+                                <p>Director del laboratorio de redes, docente nombrado de la Universidad del valle</p>
                                 <div class="social">
-                                    <a href="#"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
-                                    <a href="#"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
+                                    <a href="https://www.facebook.com/john.sanabri"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                                    <a href="https://twitter.com/josanabr"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+                                    <a href="https://plus.google.com/u/1/110296109965284088160/posts"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team -->
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <!-- begin team -->
+                        <div class="team">
+                            <div class="image" data-animation="true" data-animation-type="flipInX">
+                                <img src="{% static 'img/ma0.jpg' %}" class="img-responsive" style="max-width: 200px" alt="Mauricio Collazos" />
+                            </div>
+                            <div class="info">
+                                <h3 class="name">Mauricio Collazos</h3>
+                                <div class="title text-theme">Estudiante de pregrado</div>
+                                <p>Desarrollador móvil, amante de django, entusiata de Raspberry PI</p>
+                                <div class="social">
+                                    <a href="https://www.facebook.com/Ma0Collazos"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                                    <a href="https://twitter.com/Ma0Collazos"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+                                    <a href="https://plus.google.com/+MauricioCollazos/posts"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team -->
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <!-- begin team -->
+                        <div class="team">
+                            <div class="image" data-animation="true" data-animation-type="flipInX">
+                                <img src="{% static 'img/jhonFreddy.jpg' %}" class="img-responsive" style="max-width: 200px" alt="Jhon Freddy Caballero" />
+                            </div>
+                            <div class="info">
+                                <h3 class="name">Jhon Freddy Caballero</h3>
+                                <div class="title text-theme">Estudiante de pregrado</div>
+                                <p>Apasionado de los contenedores y amante de Docker</p>
+                                <div class="social">
+                                    <a href="https://www.facebook.com/jhon.f.caballero"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                                    <a href="https://twitter.com/jhon0fredy1"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+                                    <a href="https://plus.google.com/+JhonFredyCaballeroPeñaloza/posts"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -82,29 +123,56 @@
                     <!-- end col-4 -->
                 </div>
                 <!-- end row -->
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-4 -->
+
+                    <!-- begin col-4 -->
+                    <div class="col-md-offset-4 col-sm-offset-4 col-md-4 col-sm-4">
+                        <!-- begin team -->
+                        <div class="team">
+                            <div class="image" data-animation="true" data-animation-type="flipInX">
+                                <img src="{% static 'img/aurelio.JPG' %}" class="img-responsive"  style="max-width: 200px"  alt="Aurelio Vivas" />
+                            </div>
+                            <div class="info">
+                                <h3 class="name">Aurelio Vivas Rivas</h3>
+                                <div class="title text-theme">Estudiante de pregrado</div>
+                                <p>Atleta</p>
+                                <div class="social">
+                                    <a href="https://www.facebook.com/aurelio.vivasmeza"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+{#                                    <a href="https://twitter.com/"><i class="fa fa-twitter fa-lg fa-fw"></i></a>#}
+                                    <a href="https://plus.google.com/102258635863609775331/posts"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team -->
+                    </div>
+                    <!-- end col-4 -->
+
+                </div>
+                <!-- end row -->
             </div>
             <!-- end container -->
         </div>
         <!-- end #team -->
 
-        <!-- begin #quote -->
-        <div id="quote" class="content bg-black-darker has-bg" data-scrollview="true">
-            <!-- begin content-bg -->
-            <div class="content-bg">
-                <img src="assets/img/quote-bg.jpg" alt="Quote" />
-            </div>
-            <!-- end content-bg -->
-        </div>
-        <!-- end #quote -->
+{#        <!-- begin #quote -->#}
+{#        <div id="quote" class="content bg-black-darker has-bg" data-scrollview="true">#}
+{#            <!-- begin content-bg -->#}
+{#            <div class="content-bg">#}
+{#                <img src="assets/img/quote-bg.jpg" alt="Quote" />#}
+{#            </div>#}
+{#            <!-- end content-bg -->#}
+{#        </div>#}
+{#        <!-- end #quote -->#}
 
         <!-- beign #service -->
-        <div id="proyectos" class="content" data-scrollview="true">
+        <div id="proyectos" class="content bg-black-darker has-bg" data-scrollview="true">
             <!-- begin container -->
-            <div class="container">
+            <div class="container ">
                 <h2 class="content-title">Proyectos</h2>
                 <p class="content-desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br />
-                    sed bibendum turpis luctus eget
+                    Algunos de nuestros proyectos
                 </p>
                 <!-- begin row -->
                 <div class="row">
@@ -273,108 +341,108 @@
         </div>
         <!-- end #client -->
 
-        <!-- begin #pricing -->
-        <div id="pricing" class="content" data-scrollview="true">
-            <!-- begin container -->
-            <div class="container">
-                <h2 class="content-title">Our Price</h2>
-                <p class="content-desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br />
-                    sed bibendum turpis luctus eget
-                </p>
-                <!-- begin pricing-table -->
-                <ul class="pricing-table col-4">
-                    <li data-animation="true" data-animation-type="fadeInUp">
-                        <div class="pricing-container">
-                            <h3>Starter</h3>
-                            <div class="price">
-                                <div class="price-figure">
-                                    <span class="price-number">FREE</span>
-                                </div>
-                            </div>
-                            <ul class="features">
-                                <li>1GB Storage</li>
-                                <li>2 Clients</li>
-                                <li>5 Active Projects</li>
-                                <li>5 Colors</li>
-                                <li>Free Goodies</li>
-                                <li>24/7 Email support</li>
-                            </ul>
-                            <div class="footer">
-                                <a href="#" class="btn btn-inverse btn-block">Buy Now</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-animation="true" data-animation-type="fadeInUp">
-                        <div class="pricing-container">
-                            <h3>Basic</h3>
-                            <div class="price">
-                                <div class="price-figure">
-                                    <span class="price-number">$9.99</span>
-                                    <span class="price-tenure">per month</span>
-                                </div>
-                            </div>
-                            <ul class="features">
-                                <li>2GB Storage</li>
-                                <li>5 Clients</li>
-                                <li>10 Active Projects</li>
-                                <li>10 Colors</li>
-                                <li>Free Goodies</li>
-                                <li>24/7 Email support</li>
-                            </ul>
-                            <div class="footer">
-                                <a href="#" class="btn btn-inverse btn-block">Buy Now</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="highlight" data-animation="true" data-animation-type="fadeInUp">
-                        <div class="pricing-container">
-                            <h3>Premium</h3>
-                            <div class="price">
-                                <div class="price-figure">
-                                    <span class="price-number">$19.99</span>
-                                    <span class="price-tenure">per month</span>
-                                </div>
-                            </div>
-                            <ul class="features">
-                                <li>5GB Storage</li>
-                                <li>10 Clients</li>
-                                <li>20 Active Projects</li>
-                                <li>20 Colors</li>
-                                <li>Free Goodies</li>
-                                <li>24/7 Email support</li>
-                            </ul>
-                            <div class="footer">
-                                <a href="#" class="btn btn-theme btn-block">Buy Now</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-animation="true" data-animation-type="fadeInUp">
-                        <div class="pricing-container">
-                            <h3>Lifetime</h3>
-                            <div class="price">
-                                <div class="price-figure">
-                                    <span class="price-number">$999</span>
-                                </div>
-                            </div>
-                            <ul class="features">
-                                <li>Unlimited Storage</li>
-                                <li>Unlimited Clients</li>
-                                <li>Unlimited Projects</li>
-                                <li>Unlimited Colors</li>
-                                <li>Free Goodies</li>
-                                <li>24/7 Email support</li>
-                            </ul>
-                            <div class="footer">
-                                <a href="#" class="btn btn-inverse btn-block">Buy Now</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <!-- end container -->
-        </div>
-        <!-- end #pricing -->
+{#        <!-- begin #pricing -->#}
+{#        <div id="pricing" class="content" data-scrollview="true">#}
+{#            <!-- begin container -->#}
+{#            <div class="container">#}
+{#                <h2 class="content-title">Our Price</h2>#}
+{#                <p class="content-desc">#}
+{#                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br />#}
+{#                    sed bibendum turpis luctus eget#}
+{#                </p>#}
+{#                <!-- begin pricing-table -->#}
+{#                <ul class="pricing-table col-4">#}
+{#                    <li data-animation="true" data-animation-type="fadeInUp">#}
+{#                        <div class="pricing-container">#}
+{#                            <h3>Starter</h3>#}
+{#                            <div class="price">#}
+{#                                <div class="price-figure">#}
+{#                                    <span class="price-number">FREE</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <ul class="features">#}
+{#                                <li>1GB Storage</li>#}
+{#                                <li>2 Clients</li>#}
+{#                                <li>5 Active Projects</li>#}
+{#                                <li>5 Colors</li>#}
+{#                                <li>Free Goodies</li>#}
+{#                                <li>24/7 Email support</li>#}
+{#                            </ul>#}
+{#                            <div class="footer">#}
+{#                                <a href="#" class="btn btn-inverse btn-block">Buy Now</a>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </li>#}
+{#                    <li data-animation="true" data-animation-type="fadeInUp">#}
+{#                        <div class="pricing-container">#}
+{#                            <h3>Basic</h3>#}
+{#                            <div class="price">#}
+{#                                <div class="price-figure">#}
+{#                                    <span class="price-number">$9.99</span>#}
+{#                                    <span class="price-tenure">per month</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <ul class="features">#}
+{#                                <li>2GB Storage</li>#}
+{#                                <li>5 Clients</li>#}
+{#                                <li>10 Active Projects</li>#}
+{#                                <li>10 Colors</li>#}
+{#                                <li>Free Goodies</li>#}
+{#                                <li>24/7 Email support</li>#}
+{#                            </ul>#}
+{#                            <div class="footer">#}
+{#                                <a href="#" class="btn btn-inverse btn-block">Buy Now</a>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </li>#}
+{#                    <li class="highlight" data-animation="true" data-animation-type="fadeInUp">#}
+{#                        <div class="pricing-container">#}
+{#                            <h3>Premium</h3>#}
+{#                            <div class="price">#}
+{#                                <div class="price-figure">#}
+{#                                    <span class="price-number">$19.99</span>#}
+{#                                    <span class="price-tenure">per month</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <ul class="features">#}
+{#                                <li>5GB Storage</li>#}
+{#                                <li>10 Clients</li>#}
+{#                                <li>20 Active Projects</li>#}
+{#                                <li>20 Colors</li>#}
+{#                                <li>Free Goodies</li>#}
+{#                                <li>24/7 Email support</li>#}
+{#                            </ul>#}
+{#                            <div class="footer">#}
+{#                                <a href="#" class="btn btn-theme btn-block">Buy Now</a>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </li>#}
+{#                    <li data-animation="true" data-animation-type="fadeInUp">#}
+{#                        <div class="pricing-container">#}
+{#                            <h3>Lifetime</h3>#}
+{#                            <div class="price">#}
+{#                                <div class="price-figure">#}
+{#                                    <span class="price-number">$999</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <ul class="features">#}
+{#                                <li>Unlimited Storage</li>#}
+{#                                <li>Unlimited Clients</li>#}
+{#                                <li>Unlimited Projects</li>#}
+{#                                <li>Unlimited Colors</li>#}
+{#                                <li>Free Goodies</li>#}
+{#                                <li>24/7 Email support</li>#}
+{#                            </ul>#}
+{#                            <div class="footer">#}
+{#                                <a href="#" class="btn btn-inverse btn-block">Buy Now</a>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+{#            <!-- end container -->#}
+{#        </div>#}
+{#        <!-- end #pricing -->#}
 
         <!-- begin #contact -->
         <div id="contact" class="content bg-silver-lighter" data-scrollview="true">
