@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %} 
+<!-- section for page content -->
+
+    <!-- begin #home -->
+    <div id="home" class="content has-bg home">
+        <!-- begin content-bg -->
+        <div class="content-bg">
+          
+        </div>
+        <!-- end content-bg -->
+        <!-- begin container -->
+        <div class="container home-content">
+            <h1 class="text-theme">{% block section_title %}{% endblock %}</h1>
+            <h3>{% block section_subtitle %}{% endblock %}</h3>
+            <p>
+                {% block section_content %}
+                {% endblock %}
+            </p>
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end #home -->
+
+<!-- end section for page content -->
+{% endblock %} 
