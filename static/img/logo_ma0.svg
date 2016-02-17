@@ -1,0 +1,21 @@
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <g>
+  <title>Layer 1</title>
+  <image x="61" y="66" width="535.00002" height="408.00002" id="svg_12" xlink:href="http://images.clipartpanda.com/cloud-icon-png-7caj7rzcA.png"/>
+  <image x="142" y="305" width="100" height="100" id="svg_1" xlink:href="https://upload.wikimedia.org/wikipedia/commons/8/87/Vagrant.png"/>
+  <image x="233" y="38" width="100" height="100" id="svg_3" xlink:href="https://upload.wikimedia.org/wikipedia/commons/d/d5/Virtualbox_logo.png"/>
+  <image x="464" y="76" width="100" height="100" id="svg_4" xlink:href="https://upload.wikimedia.org/wikipedia/commons/0/05/Ansible_Logo.png"/>
+  <image x="143" y="126" width="100" height="100" id="svg_5" xlink:href="https://www.open-mpi.org/images/open-mpi-logo.png"/>
+  <image x="356" y="25" width="100" height="100" id="svg_6" xlink:href="https://fedoramagazine.org/wp-content/uploads/2013/09/docker.png"/>
+  <image x="471" y="163" width="100" height="100" id="svg_8" xlink:href="http://www.acsu.buffalo.edu/~abhijitp/img/hadoop.png">laboratory</image>
+  <image x="383" y="76" width="1" height="208" id="svg_10" xlink:href="https://raw.githubusercontent.com/ServiceStack/Assets/master/img/livedemos/techstacks/apache-mesos-logo.png">laboratory</image>
+  <image x="291" y="312" width="100" height="100" id="svg_11" xlink:href="https://www.stackops.com/wp-content/uploads/2014/08/logo-coreos.png"/>
+  <image x="446" y="245" width="100" height="147" id="svg_14" xlink:href="http://mesosphere.github.io/presentations-community/myriad-strata/assets/mesos.png"/>
+  <image x="78" y="213" width="100" height="100" id="svg_16" xlink:href="http://r-labs.co/images/blog/condor-exec.png"/>
+  <text fill="#ffffff" stroke-width="0" x="319.74403" y="161.93258" id="svg_18" font-size="24" font-family="Monospace" text-anchor="middle" xml:space="preserve" font-weight="bold" transform="matrix(1.4216922074807319,0,0,1.9368587485027433,-102.07722782555315,-117.76662234139937) " stroke="#000000">lascilab</text>
+  <text fill="#ffffff" stroke="#000000" stroke-width="0" x="312" y="222" id="svg_19" font-size="24" font-family="Monospace" text-anchor="middle" xml:space="preserve">large scale</text>
+  <text fill="#ffffff" stroke="#000000" stroke-width="0" x="370" y="251" id="svg_20" font-size="24" font-family="Monospace" text-anchor="middle" xml:space="preserve">infrastructure</text>
+  <text fill="#ffffff" stroke="#000000" stroke-width="0" x="386" y="282" id="svg_21" font-size="24" font-family="Monospace" text-anchor="middle" xml:space="preserve">laboratory</text>
+ </g>
+</svg>
