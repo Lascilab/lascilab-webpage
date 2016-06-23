@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'network_lab.apps.research',
     'network_lab.apps.resources',
     'network_lab.apps.thesis',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -110,9 +111,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/img/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "/static/img")
 
 print os.path.join(BASE_DIR, "static")

@@ -5,6 +5,8 @@ class Member(models.Model):
     """
     Moel for a member, a memper is the public profile for a member of lascilab
     """
+    # Profile picture
+    picture = models.ImageField(upload_to='img')
     # Name of the member
     name = models.TextField(max_length=100)
     # Email of the member
