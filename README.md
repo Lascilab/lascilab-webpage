@@ -2,7 +2,15 @@
 
 OS requirements python2.7+, pip
 
-##Configure you machine
+We'd added a Docker file, so you had two options, Docker or the good old hard way
+
+##Docker
+```
+docker build -t network-lab .
+docker run --name network_lab -p 8000:8000 -d network-lab
+```
+
+##the good old hard way
 Assuming you're on debian like OS
 ```
 sudo apt-get update && sudo apt-get upgrade # Upgrade your system
@@ -28,7 +36,7 @@ now  go to project folder and then
 
 now in your browser go to localhost:8000
 
-## Posting data
+# Posting data
 We're using a sqlite database, if you want to insert any data, please go to localhost:8000/admin
 
 username: lascilab
