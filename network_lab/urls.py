@@ -9,6 +9,9 @@ from network_lab.apps.projects import urls as projectsurls
 from network_lab.apps.research import urls as researchurls
 from network_lab.apps.resources import urls as resourcesurls
 from network_lab.apps.thesis import urls as thesisurls
+from django.views.static import serve as serve_static_files
+from . import settings
+
 urlpatterns = [
     # Examples:
     # url(r'^$', 'network_lab.views.home', name='home'),
@@ -23,4 +26,9 @@ urlpatterns = [
     url(r'^investigacion/', include(researchurls)),
     url(r'^recursos/', include(resourcesurls)),
     url(r'^tesis/', include(thesisurls)),
+    url(r'^media/(?P<path>.*)$', serve_static_files,
+        {'document_root': settings.MEDIA_ROOT})
+
 ]
+
+

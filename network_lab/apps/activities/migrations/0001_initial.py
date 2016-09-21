@@ -7,6 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
+        ('members', '0001_initial'),
     ]
 
     operations = [
@@ -14,13 +15,13 @@ class Migration(migrations.Migration):
             name='Activity',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('lugar', models.CharField(max_length=200)),
-                ('fecha_creacion', models.DateTimeField(auto_now=True)),
-                ('fecha', models.DateField()),
-                ('hora', models.TimeField()),
-                ('descripcion', models.TextField()),
-                ('titulo', models.CharField(max_length=100)),
-                ('encargado', models.CharField(max_length=100)),
+                ('place', models.CharField(max_length=200)),
+                ('creation_date', models.DateTimeField(auto_now=True)),
+                ('date', models.DateField()),
+                ('time', models.TimeField()),
+                ('description', models.TextField()),
+                ('title', models.CharField(max_length=100)),
+                ('encharged', models.ForeignKey(blank=True, to='members.Member', null=True)),
             ],
         ),
     ]

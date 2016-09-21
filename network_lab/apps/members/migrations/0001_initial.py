@@ -14,9 +14,11 @@ class Migration(migrations.Migration):
             name='Member',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('picture', models.ImageField(null=True, upload_to=b'img', blank=True)),
                 ('name', models.TextField(max_length=100)),
                 ('email', models.EmailField(max_length=254)),
-                ('github_url', models.URLField()),
+                ('github_url', models.URLField(null=True, blank=True)),
+                ('google_url', models.URLField(null=True, blank=True)),
                 ('description', models.TextField()),
                 ('interest', models.TextField()),
             ],
