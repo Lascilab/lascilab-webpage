@@ -48,6 +48,10 @@ INSTALLED_APPS = (
     'network_lab.apps.resources',
     'network_lab.apps.thesis',
 
+    # Third Party apps
+    'base',
+    'network_lab.apps.blog_engine',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -74,6 +78,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'network_lab.apps.blog_engine.context_processors.blog_engine_urls',
+                'network_lab.apps.blog_engine.context_processors.site_name',
             ],
         },
     },
