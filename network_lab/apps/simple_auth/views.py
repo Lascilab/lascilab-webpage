@@ -18,4 +18,3 @@ class SimpleLogout(RedirectView):
         logout(self.request)
         print "Login out"
         return super(SimpleLogout, self).get(request, *args, **kwargs)
-        

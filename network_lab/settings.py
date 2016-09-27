@@ -51,6 +51,8 @@ INSTALLED_APPS = (
     # Third Party apps
     'base',
     'network_lab.apps.blog_engine',
+    'network_lab.apps.simple_auth',
+    'network_lab.apps.static_html_engine',
 
 )
 
@@ -125,4 +127,4 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "/static/img")
 
-print os.path.join(BASE_DIR, "static")
+# print os.path.join(BASE_DIR, "static")
