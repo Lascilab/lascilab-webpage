@@ -12,6 +12,7 @@ from network_lab.apps.thesis import urls as thesisurls
 from network_lab.apps.blog_engine import urls as blog_urls
 from network_lab.apps.static_html_engine import urls as static_html_engine_urls
 from network_lab.apps.simple_auth.views import SimpleLogin, SimpleLogout
+from django.conf.urls.static import static
 
 from django.views.static import serve as serve_static_files
 from . import settings
@@ -45,6 +46,6 @@ urlpatterns = [
     ),
     url(r'^media/(?P<path>.*)$', serve_static_files,
         {'document_root': settings.MEDIA_ROOT})
-]
+] 
 
 

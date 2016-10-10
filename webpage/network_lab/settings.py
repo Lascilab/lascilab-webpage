@@ -28,6 +28,8 @@ else:
     SECRET_KEY = 'x!edk(ippl&a+1mjo0uwqaq-%jz$oehvi9udpki0je)n&ujq+p'
     DEBUG = False
 
+#DEBUG = True
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -144,10 +146,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,"static")
+#STATIC_ROOT = os.path.join(BASE_DIR,"static") # in deployment
 
 if socket.gethostname() == "produccion": 
     MEDIA_ROOT = os.path.join(BASE_DIR, "media")
     MEDIA_URL = '/media/'
 else: 
     MEDIA_ROOT = os.path.join(BASE_DIR, "static", "img")
+
+#print STATIC_URL,STATIC_ROOT
+#print MEDIA_ROOT,MEDIA_URL
+
+# Extra places for collectstatic to find static files. in development
+STATICFILES_DIRS = (
+	os.path.join(BASE_DIR, "static"),
+)
