@@ -2,14 +2,15 @@ version: '2'
 services:
     web:
       restart: always
-      build: ./network-lab
+      build: ./webpage
+      hostname: produccion
       volumes:
         - /usr/src/app
         - /usr/src/app/static
       expose:
         - "8000"
       
-      env_file: .env
+      env_file: ./webpage/.env
       command: /usr/local/bin/gunicorn network_lab.wsgi:application -w 2 -b :8000
 
     htcondor:

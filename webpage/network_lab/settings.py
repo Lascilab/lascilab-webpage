@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import socket 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
@@ -20,11 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
-#SECRET_KEY = 'x!edk(ippl&a+1mjo0uwqaq-%jz$oehvi9udpki0je)n&ujq+p'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True if os.getenv('DEBUG') == 'true' else False
+if socket.gethostname() == "produccion": 
+    SECRET_KEY = os.environ['SECRET_KEY']
+    DEBUG = True
+else: 
+    SECRET_KEY = 'x!edk(ippl&a+1mjo0uwqaq-%jz$oehvi9udpki0je)n&ujq+p'
+    DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -94,12 +96,24 @@ WSGI_APPLICATION = 'network_lab.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-#}
+if socket.gethostname() == "produccion": 
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': os.environ['DB_NAME'],
+            'USER': os.environ['DB_USER'],
+            'PASSWORD': os.environ['DB_PASS'],
+            'HOST': os.environ['DB_SERVICE'],
+            'PORT': os.environ['DB_PORT']
+        }
+    }
+else: 
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 #DATABASES = {
 #    'default': {
@@ -111,18 +125,6 @@ WSGI_APPLICATION = 'network_lab.wsgi.application'
 #        'PORT': os.environ['DB_PORT']
 #    }
 #}
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ['DB_NAME'],
-        'USER': os.environ['DB_USER'],
-        'PASSWORD': os.environ['DB_PASS'],
-        'HOST': os.environ['DB_SERVICE'],
-        'PORT': os.environ['DB_PORT']
-    }
-}
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -144,12 +146,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,"static")
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = '/media/'
-
-#STATICFILES_DIRS = (
-#    os.path.join(BASE_DIR, "static"),
-#)
-
-# print os.path.join(BASE_DIR, "static")
-
+if socket.gethostname() == "produccion": 
+    MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+    MEDIA_URL = '/media/'
+else: 
+    MEDIA_ROOT = os.path.join(BASE_DIR, "static", "img")
