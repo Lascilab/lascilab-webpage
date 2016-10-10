@@ -25,13 +25,13 @@ sudo pip install virtualenv virtualenvwrapper requests[security]
 
 source /usr/local/bin/virtualenvwrapper.sh
 mkvirtualenv network_lab
-pip install -r requirements.txt
 ```
 
 now  go to project folder and then
 
 ```
 cd webpage
+pip install -r requirements-dev.txt
 workon network_lab
 ./manage.py runserver
 ```
