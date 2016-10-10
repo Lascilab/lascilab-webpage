@@ -1,0 +1,42 @@
+version: '2'
+services:
+    web:
+      restart: always
+      build: ./network-lab
+      volumes:
+        - /usr/src/app
+        - /usr/src/app/static
+      expose:
+        - "8000"
+      
+      env_file: .env
+      command: /usr/local/bin/gunicorn network_lab.wsgi:application -w 2 -b :8000
+
+    htcondor:
+      image: htcondor
+      build: ./htcondor
+      expose:
+        - "3000"
+
+    nginx:
+      restart: always
+      build: ./nginx/
+      ports:
+        - "80:80"
+      volumes:
+        - /www/static
+      volumes_from:
+        - web
+
+    mysql:
+      image: mysql:latest
+      volumes:
+        - /var/lib/mysql
+      expose:
+        - "3306"
+      environment:
+        MYSQL_DATABASE: mysql
+        MYSQL_USER: mysql
+        MYSQL_PASSWORD: su53RsEc53T!
+        MYSQL_ROOT_PASSWORD: secret
+
