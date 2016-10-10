@@ -9,10 +9,16 @@ from network_lab.apps.projects import urls as projectsurls
 from network_lab.apps.research import urls as researchurls
 from network_lab.apps.resources import urls as resourcesurls
 from network_lab.apps.thesis import urls as thesisurls
+<<<<<<< HEAD
 from network_lab.apps.blog_engine import urls as blog_urls
 from network_lab.apps.static_html_engine import urls as static_html_engine_urls
 
 from network_lab.apps.simple_auth.views import SimpleLogin, SimpleLogout
+=======
+from django.views.static import serve as serve_static_files
+from . import settings
+
+>>>>>>> 73c45479b4dd2e3c45a2becfd442e29889d12c5b
 urlpatterns = [
     # Examples:
     # url(r'^$', 'network_lab.views.home', name='home'),
@@ -27,6 +33,7 @@ urlpatterns = [
     url(r'^investigacion/', include(researchurls)),
     url(r'^recursos/', include(resourcesurls)),
     url(r'^tesis/', include(thesisurls)),
+<<<<<<< HEAD
     url(r'^blog/', include(blog_urls, namespace="blog_engine")),
     url(r'^pages/', include(static_html_engine_urls, namespace="static_html_engine")),
 
@@ -40,4 +47,11 @@ urlpatterns = [
         SimpleLogout.as_view(pattern_name="index", permanent=False),
         name="log_out"
     ),
+=======
+    url(r'^media/(?P<path>.*)$', serve_static_files,
+        {'document_root': settings.MEDIA_ROOT})
+
+>>>>>>> 73c45479b4dd2e3c45a2becfd442e29889d12c5b
 ]
+
+

@@ -15,9 +15,9 @@
             <!-- begin container -->
             <div class="container home-content">
                 <h1 class="text-theme">Laboratorio de Redes y Sistemas Distribuidos</h1>
-                <h3>Computación de alto rendimiento, Sistemas distribuidos, Virtualización, Aprovisionamiento y Más</h3>
+                <h3>Universidad del Valle</h3>
                 <p>
-               
+                    <img src="{% static 'img/uv.png' %}" width="100" height="100">
                 </p>
             </div>
             <!-- end container -->
@@ -56,98 +56,37 @@
                 </p>
                 <!-- begin row -->
                 <div class="row">
-                    <!-- begin col-4 -->
-
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <!-- begin team -->
-                        <div class="team">
-                            <div class="image" data-animation="true" data-animation-type="flipInX">
-                                <img src="{% static 'img/2015_JohnSanabria.jpg' %}" class="img-responsive"  style="max-width: 200px"  alt="John Sanabria" />
-                            </div>
-                            <div class="info">
-                                <h3 class="name">John Alexander Sanabria Ordóñez</h3>
-                                <div class="title text-theme">Doctor en Sistemas</div>
-                                <p>Director del laboratorio de redes, docente nombrado de la Universidad del valle</p>
-                                <div class="social">
-                                    <a href="https://www.facebook.com/john.sanabri"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
-                                    <a href="https://twitter.com/josanabr"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
-                                    <a href="https://plus.google.com/u/1/110296109965284088160/posts"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end team -->
-                    </div>
-                    <!-- end col-4 -->
+                    {% for member in members %}
                     <!-- begin col-4 -->
                     <div class="col-md-4 col-sm-4">
                         <!-- begin team -->
                         <div class="team">
                             <div class="image" data-animation="true" data-animation-type="flipInX">
-                                <img src="{% static 'img/ma0.jpg' %}" class="img-responsive" style="max-width: 200px" alt="Mauricio Collazos" />
+                                {% if member.picture %}
+                                    <img src="{{ member.picture.url }}" width="100" height="100" class="img-responsive img-thumbnail" alt="{{ member.name }}" />
+                                {% endif %}
+                                
                             </div>
                             <div class="info">
-                                <h3 class="name">Mauricio Collazos</h3>
-                                <div class="title text-theme">Estudiante de pregrado</div>
-                                <p>Desarrollador móvil, amante de django, entusiata de Raspberry PI</p>
+                                <h3 class="name">{{ member.name }}</h3>
+                                <div class="title text-theme">{{ member.description }}</div>
+                                <p>{{ member.interest }}</p>
                                 <div class="social">
-                                    <a href="https://www.facebook.com/Ma0Collazos"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
-                                    <a href="https://twitter.com/Ma0Collazos"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
-                                    <a href="https://plus.google.com/+MauricioCollazos/posts"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
+                                    {% if member.google_url %}
+                                    <a href="{{ member.google_url }}"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
+                                    {% endif %}
+                                    {% if member.github_url %}
+                                    <a href="{{ member.github_url }}"><i class="fa fa-github fa-lg fa-fw"></i></a>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
                         <!-- end team -->
                     </div>
                     <!-- end col-4 -->
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <!-- begin team -->
-                        <div class="team">
-                            <div class="image" data-animation="true" data-animation-type="flipInX">
-                                <img src="{% static 'img/jhonFreddy.jpg' %}" class="img-responsive" style="max-width: 200px" alt="Jhon Freddy Caballero" />
-                            </div>
-                            <div class="info">
-                                <h3 class="name">Jhon Freddy Caballero</h3>
-                                <div class="title text-theme">Estudiante de pregrado</div>
-                                <p>Apasionado de los contenedores y amante de Docker</p>
-                                <div class="social">
-                                    <a href="https://www.facebook.com/jhon.f.caballero"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
-                                    <a href="https://twitter.com/jhon0fredy1"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
-                                    <a href="https://plus.google.com/+JhonFredyCaballeroPeñaloza/posts"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end team -->
-                    </div>
-                    <!-- end col-4 -->
-                </div>
-                <!-- end row -->
-                <!-- begin row -->
-                <div class="row">
-                    <!-- begin col-4 -->
+                    {% endfor %}
 
-                    <!-- begin col-4 -->
-                    <div class="col-md-offset-4 col-sm-offset-4 col-md-4 col-sm-4">
-                        <!-- begin team -->
-                        <div class="team">
-                            <div class="image" data-animation="true" data-animation-type="flipInX">
-                                <img src="{% static 'img/aurelio.JPG' %}" class="img-responsive"  style="max-width: 200px"  alt="Aurelio Vivas" />
-                            </div>
-                            <div class="info">
-                                <h3 class="name">Aurelio Vivas Rivas</h3>
-                                <div class="title text-theme">Estudiante de pregrado</div>
-                                <div class="social">
-                                    <a href="https://www.facebook.com/aurelio.vivasmeza"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
-{#                                    <a href="https://twitter.com/"><i class="fa fa-twitter fa-lg fa-fw"></i></a>#}
-                                    <a href="https://plus.google.com/102258635863609775331/posts"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end team -->
-                    </div>
-                    <!-- end col-4 -->
-
+                    
                 </div>
                 <!-- end row -->
             </div>
@@ -155,322 +94,30 @@
         </div>
         <!-- end #team -->
 
-{#        <!-- begin #quote -->#}
-{#        <div id="quote" class="content bg-black-darker has-bg" data-scrollview="true">#}
-{#            <!-- begin content-bg -->#}
-{#            <div class="content-bg">#}
-{#                <img src="assets/img/quote-bg.jpg" alt="Quote" />#}
-{#            </div>#}
-{#            <!-- end content-bg -->#}
-{#        </div>#}
-{#        <!-- end #quote -->#}
-
-        <!-- beign #service -->
-        <div id="proyectos" class="content bg-black-darker has-bg" data-scrollview="true">
-            <!-- begin container -->
-            <div class="container ">
-                <h2 class="content-title">Proyectos</h2>
-                <p class="content-desc">
-                    Algunos de nuestros proyectos
-                </p>
-                <!-- begin row -->
-                <div class="row">
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-cog"></i></div>
-                            <div class="info">
-                                <h4 class="title">Easy to Customize</h4>
-                                <p class="desc">Duis in lorem placerat, iaculis nisi vitae, ultrices tortor. Vestibulum molestie ipsum nulla. Maecenas nec hendrerit eros, sit amet maximus leo.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-paint-brush"></i></div>
-                            <div class="info">
-                                <h4 class="title">Clean & Careful Design</h4>
-                                <p class="desc">Etiam nulla turpis, gravida et orci ac, viverra commodo ipsum. Donec nec mauris faucibus, congue nisi sit amet, lobortis arcu.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-file"></i></div>
-                            <div class="info">
-                                <h4 class="title">Well Documented</h4>
-                                <p class="desc">Ut vel laoreet tortor. Donec venenatis ex velit, eget bibendum purus accumsan cursus. Curabitur pulvinar iaculis diam.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                </div>
-                <!-- end row -->
-                <!-- begin row -->
-                <div class="row">
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-code"></i></div>
-                            <div class="info">
-                                <h4 class="title">Re-usable Code</h4>
-                                <p class="desc">Aenean et elementum dui. Aenean massa enim, suscipit ut molestie quis, pretium sed orci. Ut faucibus egestas mattis.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-shopping-cart"></i></div>
-                            <div class="info">
-                                <h4 class="title">Online Shop</h4>
-                                <p class="desc">Quisque gravida metus in sollicitudin feugiat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service">
-                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-heart"></i></div>
-                            <div class="info">
-                                <h4 class="title">Free Support</h4>
-                                <p class="desc">Integer consectetur, massa id mattis tincidunt, sapien erat malesuada turpis, nec vehicula lacus felis nec libero. Fusce non lorem nisl.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col-4 -->
-                </div>
-                <!-- end row -->
-            </div>
-            <!-- end container -->
-        </div>
-        <!-- end #about -->
-
-        <!-- beign #action-box -->
-        <div id="action-box" class="content has-bg" data-scrollview="true">
-            <!-- begin content-bg -->
-            <div class="content-bg">
-                <img src="assets/img/action-bg.jpg" alt="Action" />
-            </div>
-            <!-- end content-bg -->
-        </div>
-        <!-- end #action-box -->
-
-        <!-- begin #work -->
-        <div id="investigacion" class="content" data-scrollview="true">
-            <!-- begin container -->
-            <div class="container" data-animation="true" data-animation-type="fadeInDown">
-                <h2 class="content-title">Investigaciones</h2>
-                <p class="content-desc">
-                    En este espacio podras encontrar investigaciones que se han desarrollado y que aun se encuentran vigentes, sin olvidar que puedes vincularte a alguna cuyo tema este a fin con tus conocimientos. 
-                     <blockquote>
-                    Recuerda que este tambien es un espacio para aprender
-                     </blockquote>
-                </p>
-
-            </div>
-            <!-- end container -->
-        </div>
-        <!-- end #work -->
-
-        <!-- begin #client -->
-        <div id="recursos" class="content has-bg bg-green" data-scrollview="true">
-            <!-- begin content-bg -->
-            <div class="content-bg">
-                <img src="assets/img/client-bg.jpg" alt="Client" />
-            </div>
-            <!-- end content-bg -->
-            <!-- begin container -->
-            <div class="container" data-animation="true" data-animation-type="fadeInUp">
-                <h2 class="content-title">Our Client Testimonials</h2>
-                <!-- begin carousel -->
-                <div class="carousel testimonials slide" data-ride="carousel" id="testimonials">
-                    <!-- begin carousel-inner -->
-                    <div class="carousel-inner text-center">
-                        <!-- begin item -->
-                        <div class="item active">
-                            <blockquote>
-                                <i class="fa fa-quote-left"></i>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra, nulla ut interdum fringilla,<br />
-                                urna massa cursus lectus, eget rutrum lectus neque non ex.
-                                <i class="fa fa-quote-right"></i>
-                            </blockquote>
-                            <div class="name"> — <span class="text-theme">Mark Doe</span>, Designer</div>
-                        </div>
-                        <!-- end item -->
-                        <!-- begin item -->
-                        <div class="item">
-                            <blockquote>
-                                <i class="fa fa-quote-left"></i>
-                                Donec cursus ligula at ante vulputate laoreet. Nulla egestas sit amet lorem non bibendum.<br />
-                                Nulla eget risus velit. Pellentesque tincidunt velit vitae tincidunt finibus.
-                                <i class="fa fa-quote-right"></i>
-                            </blockquote>
-                            <div class="name"> — <span class="text-theme">Joe Smith</span>, Developer</div>
-                        </div>
-                        <!-- end item -->
-                        <!-- begin item -->
-                        <div class="item">
-                            <blockquote>
-                                <i class="fa fa-quote-left"></i>
-                                Sed tincidunt quis est sed ultrices. Sed feugiat auctor ipsum, sit amet accumsan elit vestibulum<br />
-                                fringilla. In sollicitudin ac ligula eget vestibulum.
-                                <i class="fa fa-quote-right"></i>
-                            </blockquote>
-                            <div class="name"> — <span class="text-theme">Linda Adams</span>, Programmer</div>
-                        </div>
-                        <!-- end item -->
-                    </div>
-                    <!-- end carousel-inner -->
-                    <!-- begin carousel-indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#testimonials" data-slide-to="0" class="active"></li>
-                        <li data-target="#testimonials" data-slide-to="1" class=""></li>
-                        <li data-target="#testimonials" data-slide-to="2" class=""></li>
-                    </ol>
-                    <!-- end carousel-indicators -->
-                </div>
-                <!-- end carousel -->
-            </div>
-            <!-- end containter -->
-        </div>
-        <!-- end #client -->
-
-{#        <!-- begin #pricing -->#}
-{#        <div id="pricing" class="content" data-scrollview="true">#}
-{#            <!-- begin container -->#}
-{#            <div class="container">#}
-{#                <h2 class="content-title">Our Price</h2>#}
-{#                <p class="content-desc">#}
-{#                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br />#}
-{#                    sed bibendum turpis luctus eget#}
-{#                </p>#}
-{#                <!-- begin pricing-table -->#}
-{#                <ul class="pricing-table col-4">#}
-{#                    <li data-animation="true" data-animation-type="fadeInUp">#}
-{#                        <div class="pricing-container">#}
-{#                            <h3>Starter</h3>#}
-{#                            <div class="price">#}
-{#                                <div class="price-figure">#}
-{#                                    <span class="price-number">FREE</span>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <ul class="features">#}
-{#                                <li>1GB Storage</li>#}
-{#                                <li>2 Clients</li>#}
-{#                                <li>5 Active Projects</li>#}
-{#                                <li>5 Colors</li>#}
-{#                                <li>Free Goodies</li>#}
-{#                                <li>24/7 Email support</li>#}
-{#                            </ul>#}
-{#                            <div class="footer">#}
-{#                                <a href="#" class="btn btn-inverse btn-block">Buy Now</a>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </li>#}
-{#                    <li data-animation="true" data-animation-type="fadeInUp">#}
-{#                        <div class="pricing-container">#}
-{#                            <h3>Basic</h3>#}
-{#                            <div class="price">#}
-{#                                <div class="price-figure">#}
-{#                                    <span class="price-number">$9.99</span>#}
-{#                                    <span class="price-tenure">per month</span>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <ul class="features">#}
-{#                                <li>2GB Storage</li>#}
-{#                                <li>5 Clients</li>#}
-{#                                <li>10 Active Projects</li>#}
-{#                                <li>10 Colors</li>#}
-{#                                <li>Free Goodies</li>#}
-{#                                <li>24/7 Email support</li>#}
-{#                            </ul>#}
-{#                            <div class="footer">#}
-{#                                <a href="#" class="btn btn-inverse btn-block">Buy Now</a>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </li>#}
-{#                    <li class="highlight" data-animation="true" data-animation-type="fadeInUp">#}
-{#                        <div class="pricing-container">#}
-{#                            <h3>Premium</h3>#}
-{#                            <div class="price">#}
-{#                                <div class="price-figure">#}
-{#                                    <span class="price-number">$19.99</span>#}
-{#                                    <span class="price-tenure">per month</span>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <ul class="features">#}
-{#                                <li>5GB Storage</li>#}
-{#                                <li>10 Clients</li>#}
-{#                                <li>20 Active Projects</li>#}
-{#                                <li>20 Colors</li>#}
-{#                                <li>Free Goodies</li>#}
-{#                                <li>24/7 Email support</li>#}
-{#                            </ul>#}
-{#                            <div class="footer">#}
-{#                                <a href="#" class="btn btn-theme btn-block">Buy Now</a>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </li>#}
-{#                    <li data-animation="true" data-animation-type="fadeInUp">#}
-{#                        <div class="pricing-container">#}
-{#                            <h3>Lifetime</h3>#}
-{#                            <div class="price">#}
-{#                                <div class="price-figure">#}
-{#                                    <span class="price-number">$999</span>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <ul class="features">#}
-{#                                <li>Unlimited Storage</li>#}
-{#                                <li>Unlimited Clients</li>#}
-{#                                <li>Unlimited Projects</li>#}
-{#                                <li>Unlimited Colors</li>#}
-{#                                <li>Free Goodies</li>#}
-{#                                <li>24/7 Email support</li>#}
-{#                            </ul>#}
-{#                            <div class="footer">#}
-{#                                <a href="#" class="btn btn-inverse btn-block">Buy Now</a>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </li>#}
-{#                </ul>#}
-{#            </div>#}
-{#            <!-- end container -->#}
-{#        </div>#}
-{#        <!-- end #pricing -->#}
 
         <!-- begin #contact -->
         <div id="contact" class="content bg-silver-lighter" data-scrollview="true">
             <!-- begin container -->
             <div class="container">
-                <h2 class="content-title">Contact Us</h2>
+                <h2 class="content-title">Contactenos</h2>
                 <p class="content-desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br />
-                    sed bibendum turpis luctus eget
                 </p>
                 <!-- begin row -->
                 <div class="row">
                     <!-- begin col-6 -->
                     <div class="col-md-6" data-animation="true" data-animation-type="fadeInLeft">
-                        <h3>If you have a project you would like to discuss, get in touch with us.</h3>
+                        <h3>Si tiene proyectos que quiere discutir con nosotros, contactenos.</h3>
                         <p>
-                            Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus.
+                            
                         </p>
                         <p>
-                            <strong>SeanTheme Studio, Inc</strong><br />
-                            795 Folsom Ave, Suite 600<br />
-                            San Francisco, CA 94107<br />
-                            P: (123) 456-7890<br />
+                            <strong>Laboratorio de redes y servidores</strong><br />
+                            Edif. 331, espacio 2072<br />
+                            Sede Melendez<br />
+                            Cali, Valle del Cauca, Colombia<br />
                         </p>
                         <p>
-                            <span class="phone">+11 (0) 123 456 78</span><br />
-                            <a href="mailto:hello@emailaddress.com">seanthemes@support.com</a>
+                            <a href="mailto:laboratorio.redesysd@correounivalle.edu.co ">laboratorio.redesysd@correounivalle.edu.co </a>
                         </p>
                     </div>
                     <!-- end col-6 -->
@@ -478,19 +125,19 @@
                     <div class="col-md-6 form-col" data-animation="true" data-animation-type="fadeInRight">
                         <form class="form-horizontal">
                             <div class="form-group">
-                                <label class="control-label col-md-3">Name <span class="text-theme">*</span></label>
+                                <label class="control-label col-md-3">Nombre <span class="text-theme">*</span></label>
                                 <div class="col-md-9">
                                     <input type="text" class="form-control" />
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-3">Email <span class="text-theme">*</span></label>
+                                <label class="control-label col-md-3">Correo <span class="text-theme">*</span></label>
                                 <div class="col-md-9">
                                     <input type="text" class="form-control" />
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-3">Message <span class="text-theme">*</span></label>
+                                <label class="control-label col-md-3">Mensaje <span class="text-theme">*</span></label>
                                 <div class="col-md-9">
                                     <textarea class="form-control" rows="10"></textarea>
                                 </div>
@@ -498,7 +145,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3"></label>
                                 <div class="col-md-9 text-left">
-                                    <button type="submit" class="btn btn-theme btn-block">Send Message</button>
+                                    <button type="submit" class="btn btn-theme btn-block">Enviar</button>
                                 </div>
                             </div>
                         </form>
