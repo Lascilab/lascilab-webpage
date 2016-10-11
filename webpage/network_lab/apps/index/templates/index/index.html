@@ -46,26 +46,42 @@
 {#        </div>#}
 {#        <!-- end #about -->#}
 
-        <!-- begin #team -->
-        <div id="team" class="content" data-scrollview="true">
+        
+
+        <!-- begin #team-->
+        <div id="team" class="content has-bg" data-scrollview="true">
+
             <!-- begin container -->
-            <div class="container">
-                <h2 class="content-title">Integrantes</h2>
-                <p class="content-desc">
-                    Algunos de los integrantes activos de nuestro laboratorio
-                </p>
-                <!-- begin row -->
-                <div class="row">
-                    {% for member in members %}
-                    <!-- begin col-4 -->
-                    <div class="col-md-4 col-sm-4">
+            <div class="container" data-animation="true" data-animation-type="fadeInUp">
+                <h2 class="content-title">Nuestro equipo</h2>
+                <!-- begin carousel -->
+                <div class="carousel testimonials slide" data-ride="carousel" id="testimonials">
+                    <!-- begin carousel-inner -->
+                    <div class="carousel-inner text-center">
                         <!-- begin team -->
-                        <div class="team">
+                        <div class="item active">
+                            <div class="image" data-animation="true" data-animation-type="flipInX">
+                                <img style="border-radius: 300px;" src="{% static 'img/2015_JohnSanabria.jpg' %}" width="150" height="150" class="img-responsive img-thumbnail" alt="John Sanabria" />
+                            </div>
+                            <div class="info">
+                                <h3 class="name">John Sanabria, Ph.D</h3>
+                                <div class="title text-theme"> Descripción </div>
+                                <p> Areas de interes </p>
+                                <div class="social">
+                                    <a href="{{ member.google_url }}"><i class="fa fa-google-plus fa-3x fa-fw"></i></a>
+                                    <a href="{{ member.github_url }}"><i class="fa fa-github fa-3x fa-fw"></i></a>
+                                    <a href="{{ member.github_url }}"><i class="fa fa-youtube fa-3x fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team -->
+                        {% for member in members %}
+                        <!-- begin team -->
+                        <div class="item">
                             <div class="image" data-animation="true" data-animation-type="flipInX">
                                 {% if member.picture %}
-                                    <img src="{{ member.picture.url }}" width="100" height="100" class="img-responsive img-thumbnail" alt="{{ member.name }}" />
+                                <img  style="border-radius: 300px;" src="{{ member.picture.url }}" width="150" height="150" class="img-responsive img-thumbnail" alt="{{ member.name }}" />
                                 {% endif %}
-                                
                             </div>
                             <div class="info">
                                 <h3 class="name">{{ member.name }}</h3>
@@ -82,15 +98,19 @@
                             </div>
                         </div>
                         <!-- end team -->
+                        {% endfor %}
                     </div>
-                    <!-- end col-4 -->
-                    {% endfor %}
-
-                    
+                    <!-- end carousel-inner -->
+                    <!-- begin carousel-indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#testimonials" data-slide-to="0" class="active"></li>
+                        <li data-target="#testimonials" data-slide-to="1" class=""></li>
+                    </ol>
+                    <!-- end carousel-indicators -->
                 </div>
-                <!-- end row -->
+                <!-- end carousel -->
             </div>
-            <!-- end container -->
+            <!-- end containter -->
         </div>
         <!-- end #team -->
 

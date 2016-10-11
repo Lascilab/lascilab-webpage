@@ -151,7 +151,8 @@ if socket.gethostname() == "produccion":
     MEDIA_ROOT = os.path.join(BASE_DIR, "media")
     MEDIA_URL = '/media/'
 else: 
-    MEDIA_ROOT = os.path.join(BASE_DIR, "static", "img")
+    MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+    MEDIA_URL = '/media/'
     # Extra places for collectstatic to find static files. in development
     STATICFILES_DIRS = (
 	    os.path.join(BASE_DIR, "static"),

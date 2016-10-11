@@ -25,6 +25,9 @@
         <link href="{% static 'vendor/color_admin_v1.7/css/style-responsive.min.css' %}" rel="stylesheet"/>
         <link href="{% static 'vendor/color_admin_v1.7/css/theme/default.css' %}" id="theme" rel="stylesheet"/>
         <!-- ================== END BASE CSS STYLE ================== -->
+        <!-- ================== BEGIN BASE JS ================== -->
+        <script src="{% static 'vendor/color_admin_v1.7/plugins/pace/pace.min.js' %}"></script>
+        <!-- ================== END BASE JS ================== -->
     {% endblock %}
     {% block custom-css %}
     {% endblock %}
@@ -51,7 +54,8 @@
                     <span>
                         <img src="{% static 'img/lascilab.png' %}" width="40" height="40">
                     </span>
-                    <span class="brand-text">Lascilab
+                    <span class="brand-text">
+                        <span class="text-theme">Lasci</span>lab
                     </span>
                 </a>
             </div>
@@ -121,7 +125,6 @@
 </div>
 <!-- end #page-container -->
 
-<!-- ================== BEGIN BASE JS ================== -->
 {% block base-js %}
     <!-- ================== BEGIN BASE JS ================== -->
     <script src="{% static 'vendor/color_admin_v1.7/plugins/pace/pace.min.js' %}"></script>

@@ -15,6 +15,10 @@ class Member(models.Model):
     github_url = models.URLField(null=True,blank=True)
     # google url of the member
     google_url = models.URLField(null=True,blank=True) 
+    # youtube channer url
+    youtube_channel_url = models.URLField(null=True,blank=True) 
+    # web page url
+    webpage_url = models.URLField(null=True,blank=True) 
     # Self description of the member
     description = models.TextField()
     # Set of interest of the member
