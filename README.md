@@ -6,20 +6,21 @@ This is the source code of the "Laboratorio de redes y sistemas distribuidos" we
 ## For deploy in production
 Install Docker and Docker Compose.
 
-```
-docker-compose build
-docker-compose up -d
+```bash
+./borrar.sh
+./ejecutar.sh
 docker-compose exec web ./manage.py migrate
-docker-compose exec web ./manage.py collectstatic --noinput 
 docker-compose exec web ./manage.py createsuperuser
 ```
+
+If the migration command fails, wait at least 1m (while mysql starts) and re-run the command
 
 ## For Development
 
 ### Configure you machine
 Assuming you're on debian like OS
 
-```
+```bash
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install python-dev python-pip
 sudo pip install virtualenv virtualenvwrapper requests[security]
@@ -28,9 +29,9 @@ source /usr/local/bin/virtualenvwrapper.sh
 mkvirtualenv network_lab
 ```
 
-now  go to project folder and then
+now, go to project folder and then run
 
-```
+```bash
 cd webpage
 pip install -r requirements-dev.txt
 workon network_lab
@@ -46,7 +47,7 @@ We're using a sqlite database for dev so if you want to insert any data, please 
 |----------|--------------|
 | lascilab | lascilab2015 |
 
-### Modifying template
+### Modifying templates
 If you're not familiar with django template system, take a look  [here](https://docs.djangoproject.com/en/1.8/topics/templates/)
 
 Now, all static data is in static folder, by now where just have css folder inside, but you can add whatever you want (i.e js, img, plugins, fonts, etc)
