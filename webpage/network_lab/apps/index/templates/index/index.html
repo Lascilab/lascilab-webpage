@@ -55,7 +55,15 @@
             <div class="container" data-animation="true" data-animation-type="fadeInUp">
                 <h2 class="content-title">Nuestro equipo</h2>
                 <!-- begin carousel -->
-                <div class="carousel testimonials slide" data-ride="carousel" id="testimonials">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- begin carousel-indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        {% for member in members %}
+                        <li data-target="#myCarousel" data-slide-to="{{ forloop.counter }}" class=""></li>
+                        {% endfor %}
+                    </ol>
+                    <!-- end carousel-indicators -->
                     <!-- begin carousel-inner -->
                     <div class="carousel-inner text-center">
                         <!-- begin team -->
@@ -66,11 +74,14 @@
                             <div class="info">
                                 <h3 class="name">John Sanabria, Ph.D</h3>
                                 <div class="title text-theme"> Descripción </div>
-                                <p> Areas de interes </p>
+                                <p> 
+                                    Sistemas Distribuidos, Sistemas Operativos, Redes de Computadoras, Grid Computing.
+                                </p>
                                 <div class="social">
                                     <a href="{{ member.google_url }}"><i class="fa fa-google-plus fa-3x fa-fw"></i></a>
                                     <a href="{{ member.github_url }}"><i class="fa fa-github fa-3x fa-fw"></i></a>
-                                    <a href="{{ member.github_url }}"><i class="fa fa-youtube fa-3x fa-fw"></i></a>
+                                    <a href="{{ member.youtube_channel_url }}"><i class="fa fa-youtube fa-3x fa-fw"></i></a>
+                                    <a href="{{ member.webpage_url }}"><i class="fa fa fa-html5 fa-3x fa-fw"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -89,10 +100,16 @@
                                 <p>{{ member.interest }}</p>
                                 <div class="social">
                                     {% if member.google_url %}
-                                    <a href="{{ member.google_url }}"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
+                                    <a href="{{ member.google_url }}"><i class="fa fa-google-plus fa-3x fa-fw"></i></a>
                                     {% endif %}
                                     {% if member.github_url %}
-                                    <a href="{{ member.github_url }}"><i class="fa fa-github fa-lg fa-fw"></i></a>
+                                    <a href="{{ member.github_url }}"><i class="fa fa-github fa-3x fa-fw"></i></a>
+                                    {% endif %}
+                                    {% if member.youtube_channel_url %}
+                                    <a href="{{ member.youtube_channel_url }}"><i class="fa fa-youtube fa-3x fa-fw"></i></a>
+                                    {% endif %}
+                                    {% if member.webpage_url %}
+                                    <a href="{{ member.webpage_url }}"><i class="fa fa fa-html5 fa-3x fa-fw"></i></a>
                                     {% endif %}
                                 </div>
                             </div>
@@ -101,12 +118,6 @@
                         {% endfor %}
                     </div>
                     <!-- end carousel-inner -->
-                    <!-- begin carousel-indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#testimonials" data-slide-to="0" class="active"></li>
-                        <li data-target="#testimonials" data-slide-to="1" class=""></li>
-                    </ol>
-                    <!-- end carousel-indicators -->
                 </div>
                 <!-- end carousel -->
             </div>
