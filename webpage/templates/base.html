@@ -35,9 +35,10 @@
 
 </head>
 <body data-spy="scroll" data-target="#header-navbar" data-offset="51">
-<!-- begin #page-container -->
-{% block header %}
+    <!-- begin #page-container -->
     <div id="page-container" class="fade">
+
+{% block header %}
     <!-- begin #header -->
     <div id="header" class="header navbar navbar-inverse navbar-fixed-top">
         <!-- begin container -->
@@ -63,9 +64,21 @@
             <!-- begin navbar-collapse -->
             <div class="collapse navbar-collapse" id="header-navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{% url 'index' %}">Inicio</a></li>
-                    <li><a href="{% url 'index-research' %}">Investigación</a></li>
-                    <li><a href="{% url 'index-thesis' %}">Wiki</a></li>
+                    <li><a href="#home" data-click="scroll-to-target">INICIO</a></li>
+                    <li><a href="" data-click="scroll-to-target">¿QUE HACEMOS?</a></li>
+                    <li><a href="#team" data-click="scroll-to-target">EQUIPO</a></li>
+                    <li><a href="#servicios" data-click="scroll-to-target">SERVICIOS</a></li>
+                    <li class="active dropdown">
+                        <a href="#wiki" data-click="scroll-to-target" data-toggle="dropdown">WIKI <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-left animated fadeInDown">
+                            <li><a href="{% url 'index-thesis' %}">HTCondor</a></li>
+                            <li><a href="index_inverse_header.html">Contenedores</a></li>
+                            <li><a href="index_default_header.html">OpenMP</a></li>
+                            <li><a href="extra_element.html">MPI</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" data-click="scroll-to-target">ACTIVIDADES</a></li>
+                    <li><a href="#contact" data-click="scroll-to-target">CONTACTO</a></li>
                 </ul>
             </div>
             <!-- end navbar-collapse -->
@@ -99,24 +112,14 @@
 
     <!-- begin theme-panel -->
     <div class="theme-panel">
-        
-
+        <a href="javascript:;" data-click="theme-panel-expand" class="theme-collapse-btn"><i class="fa fa-cog"></i></a>
         <div class="theme-panel-content">
             <ul class="theme-list clearfix">
-                <li><a href="javascript:;" class="bg-purple" data-theme="purple" data-click="theme-selector"
-                       data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Purple">&nbsp;</a>
-                </li>
-                <li><a href="javascript:;" class="bg-blue" data-theme="blue" data-click="theme-selector"
-                       data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Blue">&nbsp;</a>
-                </li>
-                <li class="active"><a href="javascript:;" class="bg-green" data-theme="default"
-                                      data-click="theme-selector" data-toggle="tooltip" data-trigger="hover"
-                                      data-container="body" data-title="Default">&nbsp;</a></li>
-                <li><a href="javascript:;" class="bg-orange" data-theme="orange" data-click="theme-selector"
-                       data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Orange">&nbsp;</a>
-                </li>
-                <li><a href="javascript:;" class="bg-red" data-theme="red" data-click="theme-selector"
-                       data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Red">&nbsp;</a></li>
+                <li><a href="javascript:;" class="bg-purple" data-theme="purple" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Purple">&nbsp;</a></li>
+                <li><a href="javascript:;" class="bg-blue" data-theme="blue" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Blue">&nbsp;</a></li>
+                <li class="active"><a href="javascript:;" class="bg-green" data-theme="default" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Default">&nbsp;</a></li>
+                <li><a href="javascript:;" class="bg-orange" data-theme="orange" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Orange">&nbsp;</a></li>
+                <li><a href="javascript:;" class="bg-red" data-theme="red" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Red">&nbsp;</a></li>
             </ul>
         </div>
     </div>
@@ -150,7 +153,5 @@
 {% endblock %}
 {% block custom-js %}
 {% endblock %}
-
-
 </body>
 </html>

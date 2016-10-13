@@ -8,5 +8,8 @@ class Index(TemplateView):
 
     def get_context_data(self,**kwargs):
     	context = super(Index,self).get_context_data(**kwargs)
-    	context['members'] = Member.objects.all()
+    	members = Member.objects.all()
+    	chunk_size = 3
+    	paired_members = [members[i:i + chunk_size] for i in range(0, len(members), chunk_size)]
+    	context['paired_members'] = paired_members
     	return context
