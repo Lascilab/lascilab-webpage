@@ -10,7 +10,7 @@ server {
     location ~* ^/condor/([a-z]+)/(.*)$ {
         rewrite ^/condor/([a-z]+)/(.*)$ $1/$2 break;
         resolver 127.0.0.11;
-        proxy_pass http://htcondor$1:3000/$2;
+        proxy_pass http://$1:3000/$2;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";

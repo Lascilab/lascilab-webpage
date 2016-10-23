@@ -1,0 +1,21 @@
+{% extends 'base_section.html' %}
+{% block title %}
+    Laboratorio de redes
+{% endblock %}
+
+{% block section_title %}
+{% endblock %}
+
+{% block section_subtitle %}
+{% endblock %}
+
+{% block section_content %}
+<p>
+Redirigiendo
+</p>
+<script>
+setTimeout(function(){
+  window.location = "/condor/{{contenedor}}/";
+}, 3000);
+</script>
+{% endblock %}
