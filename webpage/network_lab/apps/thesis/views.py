@@ -15,14 +15,14 @@ class Index(TemplateView):
 class Docker(View):
     def get(self, request):
         cli = Client(base_url='unix://var/run/docker.sock')
-        nombre = "htcondor"+(''.join(ch for ch in random_name('cat') if ch.isalpha())).lower()
+        nombre = (''.join(ch for ch in random_name('cat') if ch.isalpha())).lower()
         #fecha = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
         # https://docker-py.readthedocs.io/en/latest/hostconfig/
         # host_config= 
         #    cli.create_host_config(cap_drop=['MKNOD'], pids_limit= , cpuset_cpus (str), mem_limit="256m"
         #            cpu_shares (int), cpu_period (int), cpu_group (int), memswap_limit (str or int))
         #            sysctls(?)
-        container = cli.create_container(image="htcondor:latest", name=nombre, hostname=nombre,
+        container = cli.create_container(image="htcondor:latest", name="htcondor"+nombre, hostname="htcondor"+nombre,
                                           ports=["3000"], 
                                           labels={"container": "htcondor", "createdat":"hoy"})
         netId = cli.inspect_network('lascilabwebpage_default')
