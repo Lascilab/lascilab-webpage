@@ -9,7 +9,8 @@ services:
         - /usr/src/app/static
       expose:
         - "8000"
-      
+#     volumes:
+#       - /var/run/docker.sock:/var/run/docker.sock:ro  
       env_file: ./webpage/.env
       command: /usr/local/bin/gunicorn network_lab.wsgi:application -w 2 -b :8000
 
@@ -41,3 +42,7 @@ services:
         MYSQL_PASSWORD: su53RsEc53T!
         MYSQL_ROOT_PASSWORD: secret
 
+#networks:
+#  default:
+#    external:
+#      name: uchuva-net
