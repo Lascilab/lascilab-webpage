@@ -16,8 +16,8 @@ services:
     htcondor:
       image: htcondor
       build: ./htcondor
-      expose:
-        - "3000"
+      ports:
+        - "3000:3000"
 
     nginx:
       restart: always
