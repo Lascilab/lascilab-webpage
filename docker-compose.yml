@@ -14,12 +14,6 @@ services:
       env_file: ./webpage/.env
       command: /usr/local/bin/gunicorn network_lab.wsgi:application -w 2 -b :8000
 
-    htcondor:
-      image: htcondor
-      build: ./htcondor
-      expose:
-        - "3000"
-
     nginx:
       restart: always
       build: ./nginx/
