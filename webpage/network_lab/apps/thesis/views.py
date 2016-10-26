@@ -22,7 +22,7 @@ class Docker(View):
         #    cli.create_host_config(cap_drop=['MKNOD'], pids_limit= , cpuset_cpus (str), mem_limit="256m"
         #            cpu_shares (int), cpu_period (int), cpu_group (int), memswap_limit (str or int))
         #            sysctls(?)
-        container = cli.create_container(image="htcondor:latest", name="htcondor"+nombre, hostname="htcondor"+nombre,
+        container = cli.create_container(image="carlochess/htcondorwebui", name="htcondor"+nombre, hostname="htcondor"+nombre,
                                           ports=["3000"], 
                                           labels={"container": "htcondor", "createdat":"hoy"})
         netId = cli.inspect_network('lascilabwebpage_default')

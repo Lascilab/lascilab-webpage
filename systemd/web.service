@@ -1,0 +1,15 @@
+[Unit]                                                                                                       
+Description=PostgreSQL container                                                                             
+Requires=docker.service                                                                                      
+After=docker.service                                                                                         
+[Service]                                                                                                    
+Restart=on-failure                                                                                           
+RestartSec=10                                                                                                
+ExecStartPre=-/usr/bin/docker stop postgres                                                                  
+ExecStartPre=-/usr/bin/docker rm postgres                                                                    
+ExecStart=/usr/bin/docker run --name postgres \                                                              
+ --volume /opt/db/postgres:/var/lib/pgsql/data \                                                             
+ kiasaki/alpine-postgres                                                                                     
+ExecStop=/usr/bin/docker stop postgres                                                                       
+[Install]                                                                                                    
+WantedBy=multi-user.target 
