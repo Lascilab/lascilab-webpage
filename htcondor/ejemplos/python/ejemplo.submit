@@ -1,8 +1,0 @@
-universe                = vanilla
-executable              = /usr/bin/python
-arguments               = -c 'print 2+2'
-output                  = out.$(Process)
-error                   = err.$(Process)
-log                     = log.$(Process)
-request_memory          = 10M
-queue 1

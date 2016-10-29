@@ -23,9 +23,14 @@ services:
         - /www/static
       volumes_from:
         - web
+#      environment:
+#        - "constraint:node: "=frontend01"
+#        - "affinity:container==*kubelet*"
+#        - "affinity:container!=*proxy*"
 
     mysql:
       image: mysql:latest
+      restart: always
       volumes:
         - /var/lib/mysql
       expose:
