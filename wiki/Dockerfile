@@ -1,6 +1,8 @@
 FROM node:6-slim
 
 ARG VERSION=3.2.0
+ENV BOOKDIR /srv/html
+VOLUME $BOOKDIR
 RUN npm install --global gitbook-cli &&\
 	gitbook fetch ${VERSION} &&\
 	npm cache clear &&\
