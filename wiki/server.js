@@ -5,13 +5,14 @@ var handler = createHandler({ path: '/', secret: 'myhashsecret' })
 var path = require("path");
 var exec = require('child_process').exec;
 
-function cloneRepo(){
+function cloneRepo(cb){
   exec( "git clone https://github.com/Lascilab/Uvcluster /srv/gitbook", function(error, stdout, stderr){
     if(error){
       console.error("No es posible clonar");
       return;
     }
     console.log("repositorio clonado")
+    cb()
   });
 }
 
@@ -19,7 +20,7 @@ function checkRepoFolder(cb){
   fs.access("/srv/gitbook", fs.F_OK, function(err) {
       if (err) {
           console.error("repositorio inexistente")
-          cloneRepo();
+          cloneRepo(pullRepo);
       }else{
         console.log("repositorio existente")
         pullRepo(function(err){
@@ -63,7 +64,7 @@ setInterval(checkRepoFolder, 1000*60*60*24)// cada 24h actualice
 
 http.createServer(function (req, res) {
   handler(req, res, function (err) {
-    res.statusCode = 404
+    res.statusCode = 200
     res.end('Lascilab')
     checkRepoFolder();
   })
