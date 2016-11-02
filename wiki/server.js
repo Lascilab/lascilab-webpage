@@ -39,6 +39,8 @@ function genDoc(){
 
 checkRepoFolder();
 
+// setInterval(pullRepo, 1000*60*60*24)
+
 http.createServer(function (req, res) {
   handler(req, res, function (err) {
     res.statusCode = 404

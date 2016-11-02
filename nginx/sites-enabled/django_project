@@ -7,6 +7,10 @@ server {
     location /static {
         alias /usr/src/app/static;
     }
+    
+    location /wiki {
+        alias /srv/html;
+    }
     #location ~* ^/condor/([a-z]+)/(.*)$ {
     #    rewrite ^/condor/([a-z]+)/(.*)$ $1/$2 break;
     #    resolver 127.0.0.11;
@@ -18,6 +22,11 @@ server {
     #    proxy_set_header Host $host;
     #}
     
+    location /gitbook {
+        proxy_pass http://git:3000;
+        proxy_set_header Host $host;
+    }
+        
     location / {
         proxy_pass http://web:8000;
         proxy_set_header Host $host;

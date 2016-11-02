@@ -11,9 +11,6 @@ RUN apt-get update && apt-get install -y git && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-#WORKDIR /srv/gitbook
-#VOLUME /srv/gitbook /srv/html
-
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
