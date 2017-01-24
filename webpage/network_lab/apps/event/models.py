@@ -1,7 +1,7 @@
 from django.db import models
 from network_lab.apps.members.models import Member
 # Create your models here.
-class Activity(models.Model):
+class Event(models.Model):
     """
     An activity is sleep, and I don't like to document at midnigth
     """

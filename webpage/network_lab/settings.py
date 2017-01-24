@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Apps
-    'network_lab.apps.activities',
+    'network_lab.apps.event',
     'network_lab.apps.courses',
     'network_lab.apps.index',
     'network_lab.apps.members',
