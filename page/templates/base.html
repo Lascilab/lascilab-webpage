@@ -1,0 +1,139 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}Laboratorio de Redes{% endblock %}</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta property="og:url" content="http://www.univalle.edu.co/" />
+    <meta property="og:title" content="Universidad del Valle / Cali, Colombia" />
+    <meta property="og:type" content="website" />
+    <meta name="description" content="Univalle Sitio Web" />
+    <link href="{% static 'img/favicon.ico' %}" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    {% block base-css %}
+        <!-- ================== BEGIN BASE CSS STYLE ================== -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
+        <link href="{% static 'vendor/color_admin_v1.7/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
+        <link href="{% static 'vendor/color_admin_v1.7/plugins/font-awesome/css/font-awesome.min.css' %}"
+              rel="stylesheet"/>
+        <link href="{% static 'vendor/color_admin_v1.7/css/animate.min.css' %}" rel="stylesheet"/>
+        <link href="{% static 'vendor/color_admin_v1.7/css/style.min.css' %}" rel="stylesheet"/>
+        <link href="{% static 'vendor/color_admin_v1.7/css/style-responsive.min.css' %}" rel="stylesheet"/>
+        <link href="{% static 'vendor/color_admin_v1.7/css/theme/default.css' %}" id="theme" rel="stylesheet"/>
+        <!-- ================== END BASE CSS STYLE ================== -->
+        <!-- ================== BEGIN BASE JS ================== -->
+        <script src="{% static 'vendor/color_admin_v1.7/plugins/pace/pace.min.js' %}"></script>
+        <!-- ================== END BASE JS ================== -->
+    {% endblock %}
+    {% block custom-css %}
+    {% endblock %}
+
+
+</head>
+<body data-spy="scroll" data-target="#header-navbar" data-offset="51">
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade">
+
+{% block header %}
+    <!-- begin #header -->
+    <div id="header" class="header navbar navbar-inverse navbar-fixed-top">
+        <!-- begin container -->
+        <div class="container">
+            <!-- begin navbar-header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#header-navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    <span>
+                        <img src="{% static 'img/lascilab.png' %}" width="40" height="40">
+                    </span>
+                    <span class="brand-text">
+                        <span class="text-theme">Lasci</span>lab
+                    </span>
+                </a>
+            </div>
+            <!-- end navbar-header -->
+            <!-- begin navbar-collapse -->
+            <div class="collapse navbar-collapse" id="header-navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home" data-click="scroll-to-target">INICIO</a></li>
+                    <li><a href="#about" data-click="scroll-to-target">¿QUIENES SOMOS?</a></li>
+                    <li><a href="#team" data-click="scroll-to-target">EQUIPO</a></li>
+                    <li class="active dropdown">
+                        <a href="" data-click="scroll-to-target" data-toggle="dropdown">EVENTOS <b class="caret"></b></a>
+                        <ul class="dropdown-menu dropdown-menu-left animated fadeInDown">
+                            <li><a href="">I Seminario de Plataformas Computacionales 2016</a></li>
+                            <li><a href="">II Seminario de Plataformas Computacionales 2017</a></li>
+                            <li><a href="{% url 'event:list' %}">Todos ..</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact" data-click="scroll-to-target">CONTACTO</a></li>
+                </ul>
+            </div>
+            <!-- end navbar-collapse -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end #header -->
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+    <!-- begin #footer -->
+    <div id="footer" class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <div></div>
+                Lascilab
+            </div>
+            <p>
+                Un laboratorio de la Universidad de Valle <br/>
+            </p>
+
+            <p class="social-list">
+                <a href="https://github.com/lascilab"><i class="fa fa-github fa-fw"></i></a>
+            </p>
+        </div>
+    </div>
+    <!-- end #footer -->
+{% endblock %}
+</div>
+<!-- end #page-container -->
+
+{% block base-js %}
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="{% static 'vendor/color_admin_v1.7/plugins/pace/pace.min.js' %}"></script>
+    <script src="{% static 'vendor/color_admin_v1.7/plugins/jquery/jquery-1.9.1.min.js' %}"></script>
+    <script src="{% static 'vendor/color_admin_v1.7/plugins/jquery/jquery-migrate-1.1.0.min.js' %}"></script>
+    <script src="{% static 'vendor/color_admin_v1.7/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--[if lt IE 9]>
+		<script src="assets/crossbrowserjs/html5shiv.js"></script>
+		<script src="assets/crossbrowserjs/respond.min.js"></script>
+		<script src="assets/crossbrowserjs/excanvas.min.js"></script>
+	<![endif]-->
+    <script src="{% static 'vendor/color_admin_v1.7/plugins/jquery-cookie/jquery.cookie.js' %}"></script>
+    <script src="{% static 'vendor/color_admin_v1.7/plugins/scrollMonitor/scrollMonitor.js' %}"></script>
+    <script src="{% static 'vendor/color_admin_v1.7/js/apps.min.js' %}"></script>
+
+    <!-- ================== END BASE JS ================== -->
+
+    <script>
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
+{% endblock %}
+{% block custom-js %}
+{% endblock %}
+</body>
+</html>
