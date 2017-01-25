@@ -16,10 +16,14 @@ Including another URLconf
 from django.conf.urls import url
 from django.conf.urls import include
 from django.contrib import admin
+from django.views.static import serve as serve_static_files
+from . import settings
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('applications.index.urls',namespace='index')),
     url(r'^', include('applications.event.urls',namespace='event')),
+     url(r'^media/(?P<path>.*)$', serve_static_files,{'document_root': settings.MEDIA_ROOT}),
 ]
+
