@@ -31,21 +31,19 @@ class Event(models.Model):
     start_date = models.DateTimeField(_('Start Date'),null=True,blank=True)
     end_date = models.DateTimeField(_('End Date'),null=True,blank=True)
     # Registration link
-    registration_form_url = models.URLField(_('Registration Form URL'),null=True,blank=True) 
+    registration_form_url = models.URLField(_('Registration Form URL'),null=True,blank=True)
     # Feedback form url
-    feedback_form_url = models.URLField(_('Feedback Form URL'),null=True,blank=True) 
+    feedback_form_url = models.URLField(_('Feedback Form URL'),null=True,blank=True)
     # The Objective of the event
     mision = models.TextField(_('Event Mision'),null=True,blank=True)
     # Description of the activity
     topics = models.ManyToManyField('Topic')
-    # how the activity is going to be organized
-    organization = models.CharField(_('Event Organization'),max_length=100,null=True,blank=True)
     # Location in which the event will take place
-    venue = models.TextField(_('Event Venue'),null=True,blank=True)
+    venue = models.TextField(_('Venue'),null=True,blank=True)
     # Event costs information
-    costs = models.TextField(_('Event Cost'),null=True,blank=True)
+    costs = models.TextField(_('Cost'),null=True,blank=True)
     # Picture of the event schedule
-    program_picture = models.ImageField(_('Program Picture'),upload_to='img/events',null=True,blank=True)
+    program = models.URLField(_('Program URL'),null=True,blank=True)
     # Event images
     images = models.ManyToManyField('EventImage')
     # Sponsors

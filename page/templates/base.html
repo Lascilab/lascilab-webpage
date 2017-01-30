@@ -15,19 +15,19 @@
     <meta name="description" content="Univalle Sitio Web" />
     <link href="{% static 'img/favicon.ico' %}" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     {% block base-css %}
-        <!-- ================== BEGIN BASE CSS STYLE ================== -->
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
-        <link href="{% static 'vendor/color_admin_v1.7/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
-        <link href="{% static 'vendor/color_admin_v1.7/plugins/font-awesome/css/font-awesome.min.css' %}"
-              rel="stylesheet"/>
-        <link href="{% static 'vendor/color_admin_v1.7/css/animate.min.css' %}" rel="stylesheet"/>
-        <link href="{% static 'vendor/color_admin_v1.7/css/style.min.css' %}" rel="stylesheet"/>
-        <link href="{% static 'vendor/color_admin_v1.7/css/style-responsive.min.css' %}" rel="stylesheet"/>
-        <link href="{% static 'vendor/color_admin_v1.7/css/theme/default.css' %}" id="theme" rel="stylesheet"/>
-        <!-- ================== END BASE CSS STYLE ================== -->
-        <!-- ================== BEGIN BASE JS ================== -->
-        <script src="{% static 'vendor/color_admin_v1.7/plugins/pace/pace.min.js' %}"></script>
-        <!-- ================== END BASE JS ================== -->
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
+    <link href="{% static 'vendor/color_admin_v1.7/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'vendor/color_admin_v1.7/plugins/font-awesome/css/font-awesome.min.css' %}"
+          rel="stylesheet"/>
+    <link href="{% static 'vendor/color_admin_v1.7/css/animate.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'vendor/color_admin_v1.7/css/style.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'vendor/color_admin_v1.7/css/style-responsive.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'vendor/color_admin_v1.7/css/theme/default.css' %}" id="theme" rel="stylesheet"/>
+    <!-- ================== END BASE CSS STYLE ================== -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="{% static 'vendor/color_admin_v1.7/plugins/pace/pace.min.js' %}"></script>
+    <!-- ================== END BASE JS ================== -->
     {% endblock %}
     {% block custom-css %}
     {% endblock %}
@@ -67,14 +67,7 @@
                     <li><a href="#home" data-click="scroll-to-target">INICIO</a></li>
                     <li><a href="#about" data-click="scroll-to-target">¿QUIENES SOMOS?</a></li>
                     <li><a href="#team" data-click="scroll-to-target">EQUIPO</a></li>
-                    <li class="active dropdown">
-                        <a href="" data-click="scroll-to-target" data-toggle="dropdown">EVENTOS <b class="caret"></b></a>
-                        <ul class="dropdown-menu dropdown-menu-left animated fadeInDown">
-                            <li><a href="">I Seminario de Plataformas Computacionales 2016</a></li>
-                            <li><a href="">II Seminario de Plataformas Computacionales 2017</a></li>
-                            <li><a href="{% url 'event:list' %}">Todos ..</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="{% url 'event:list' %}">EVENTOS</a></li>
                     <li><a href="#contact" data-click="scroll-to-target">CONTACTO</a></li>
                 </ul>
             </div>
