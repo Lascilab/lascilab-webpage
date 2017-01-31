@@ -87,9 +87,9 @@ SQLITE = {
 }
 
 try:
-    OTHER = {
+    POSTGRES = {
             'default': {
-                'ENGINE': 'django.db.backends.mysql',
+                'ENGINE': 'django.db.backends.postgresql_psycopg2',
                 'NAME': os.environ['DB_NAME'],
                 'USER': os.environ['DB_USER'],
                 'PASSWORD': os.environ['DB_PASS'],
@@ -100,7 +100,7 @@ try:
 except KeyError:
     OTHER = None
     
-DATABASES = SQLITE if HOSTNAME is not 'production' else OTHER
+DATABASES = SQLITE if HOSTNAME is not 'production' else POSTGRES
 
 
 # Password validation
