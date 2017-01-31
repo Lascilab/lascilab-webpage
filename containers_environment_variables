@@ -1,0 +1,6 @@
+PRODUCTION=on
+DB_NAME=lascilab
+DB_USER=lascilab
+DB_PASS=lascilab
+DB_SERVICE=postgres
+DB_PORT=5432

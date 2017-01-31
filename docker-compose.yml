@@ -1,56 +1,34 @@
-version: '2'
-services:
-    web:
-      restart: always
-      build: ./webpage
-      hostname: produccion
-      volumes:
-        - /usr/src/app
-        - /usr/src/app/static
-      expose:
-        - "8000"
-      #volumes:
-      #  - /var/run/docker.sock:/var/run/docker.sock:ro  
-      env_file: ./webpage/.env
-      command: /usr/local/bin/gunicorn network_lab.wsgi:application -w 2 -b :8000
+ # This file defines two services, the db service and web service
+ version: '2'
+ services:
+   postgres: # Specification of db service
+     restart: always # restart db service if it crashes
+     image: postgres # db service is based on a docker image with postgres
+     env_file: containers_environment_variables # add the variables defined in this file into the container enviroment variables
+     volumes:
+       - ./postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+     expose:
+       - "5432"
 
-    git:
-      restart: always
-      build: ./wiki
-      volumes:
-        - /srv/html
-      expose:
-        - "3000"
-
-    nginx:
-      restart: always
-      build: ./nginx/
-      ports:
-        - "80:80"
-      volumes:
-        - /www/static
-      volumes_from:
-        - web
-        - git
-#      environment:
-#        - "constraint:node: "=frontend01"
-#        - "affinity:container==*kubelet*"
-#        - "affinity:container!=*proxy*"
-
-    mysql:
-      image: mysql:latest
-      restart: always
-      volumes:
-        - /var/lib/mysql
-      expose:
-        - "3306"
-      environment:
-        MYSQL_DATABASE: mysql
-        MYSQL_USER: mysql
-        MYSQL_PASSWORD: su53RsEc53T!
-        MYSQL_ROOT_PASSWORD: secret
-
-#networks:
-#  default:
-#    external:
-#      name: uchuva-net
+   web: # Specification of web service
+     hostname: production
+     restart: always # restart web server if it crashes
+     build: ./web # specification of the buil context of the web service (where is the Dockerfiel)
+     command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py loaddata db.json && gunicorn page.wsgi -b 0.0.0.0:8000"
+     volumes: # map the current directory with a new webpage directory into the container (like share directories)
+       - .:/webpage
+     expose:
+       - "8000"
+     links:
+       - postgres:postgres
+     env_file: containers_environment_variables # add the variables defined on this file into the container enviroment variables
+ 
+   nginx:
+     restart: always
+     build: ./nginx
+     ports: 
+       - "80:80"
+     volumes_from:
+       - web
+     links:
+       - web:web

@@ -1,7 +1,0 @@
-Django==1.8.2
-gunicorn==19.3.0
-Pillow==3.3.0
-wheel==0.24.0
-MySQL-python==1.2.5
-#docker-py==1.10.4
-#getname==0.1.1
