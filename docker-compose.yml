@@ -4,7 +4,7 @@
    postgres: # Specification of db service
      restart: always # restart db service if it crashes
      #image: postgres # db service is based on a docker image with postgres
-     image: 192.168.28.50:5000/postgres
+     image: 192.168.28.50:5000/postgres:1.1
      env_file: containers_environment_variables # add the variables defined in this file into the container enviroment variables
      volumes:
        - ./postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
@@ -14,9 +14,9 @@
    web: # Specification of web service
      hostname: production
      restart: always # restart web server if it crashes
-     image: 192.168.28.50:5000/web
+     image: 192.168.28.50:5000/web:1.1
      #build: ./webpage # specification of the buil context of the web service (where is the Dockerfiel)
-     command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py loaddata db.json && gunicorn page.wsgi -b 0.0.0.0:8000"
+     command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn page.wsgi -b 0.0.0.0:8000"
      volumes: # map the current directory with a new webpage directory into the container (like share directories)
        - ./webpage:/webpage
      expose:
