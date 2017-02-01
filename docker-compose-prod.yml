@@ -1,0 +1,35 @@
+ # This file defines two services, the db service and web service
+ version: '2'
+ services:
+   postgres:
+     restart: always # restart db service if it crashes
+     image: 192.168.28.50:5000/postgres:1.1
+     env_file: containers_environment_variables
+     volumes:
+       - ./postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+     expose:
+       - "5432"
+
+   web:
+     hostname: production
+     restart: always # restart web server if it crashes
+     image: 192.168.28.50:5000/web:1.1
+     command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn page.wsgi -b 0.0.0.0:8000"
+     volumes: 
+       - ./webpage:/webpage
+     expose:
+       - "8000"
+     links:
+       - postgres:postgres
+     env_file: containers_environment_variables
+ 
+   nginx:
+     restart: always
+     image: 192.168.28.50:5000/nginx
+     #build: ./nginx
+     ports: 
+       - "80:80"
+     volumes_from:
+       - web
+     links:
+       - web:web
