@@ -15,20 +15,22 @@ import socket
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-HOSTNAME = socket.gethostname()
+PRODUCTION = True if 'PRODUCTION' in os.environ else False
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '2o^l#617!yt09y4az&)lviukvu!#s@*gygv(s9or_(ddlchx+-' \
-if HOSTNAME is not 'production' else os.environ['SECRET_KEY']
+SECRET_KEY = '2o^l#617!yt09y4az&)lviukvu!#s@*gygv(s9or_(ddlchx+-' if not PRODUCTION else os.environ['SECRET_KEY']
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True if HOSTNAME is not 'production' else False
+DEBUG = False if PRODUCTION else True
 
 
-ALLOWED_HOSTS = [] if HOSTNAME is not 'prodcution' else ['*']
+
+ALLOWED_HOSTS = ['*'] if PRODUCTION else []
 
 
 # Application definition
@@ -98,9 +100,9 @@ try:
             }
         }
 except KeyError:
-    OTHER = None
+    POSTGRES = None
     
-DATABASES = SQLITE if HOSTNAME is not 'production' else POSTGRES
+DATABASES = POSTGRES if PRODUCTION else SQLITE
 
 
 # Password validation
@@ -143,7 +145,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-if HOSTNAME is 'production':
+if PRODUCTION:
     STATIC_ROOT = os.path.join(BASE_DIR,"static")
 else:
     # Extra places for collectstatic to find static files. in development
