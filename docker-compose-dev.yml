@@ -9,6 +9,14 @@
      expose:
        - "5432"
 
+   git:
+      restart: always
+      build: ./wiki
+      volumes:
+        - /srv/html
+      expose:
+        - "3000"
+
    web: 
      hostname: production
      restart: always 
@@ -24,11 +32,15 @@
  
    nginx:
      restart: always
-     image: 192.168.28.50:5000/nginx
-     #build: ./nginx
+     build: ./nginx
      ports: 
        - "80:80"
      volumes_from:
        - web
      links:
        - web:web
+     volumes:
+       - /www/static
+     volumes_from:
+       - web
+       - git

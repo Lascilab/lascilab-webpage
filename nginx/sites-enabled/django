@@ -7,6 +7,15 @@ server {
     location /static {
         alias /webpage/static;
     }
+    
+    location /wiki {
+        alias /srv/html;
+    }
+    
+    location /gitbook {
+        proxy_pass http://git:3000;
+        proxy_set_header Host $host;
+    }
 
     location / {
         proxy_pass http://web:8000;

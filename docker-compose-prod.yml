@@ -10,6 +10,14 @@
      expose:
        - "5432"
 
+   git:
+      restart: always
+      image: 192.168.28.50:5000/lascilab/wiki
+      volumes:
+        - /srv/html
+      expose:
+        - "3000"
+
    web:
      hostname: production
      restart: always # restart web server if it crashes
@@ -29,7 +37,10 @@
      #build: ./nginx
      ports: 
        - "80:80"
+     volumes:
+       - /www/static
      volumes_from:
        - web
+       - git
      links:
        - web:web
