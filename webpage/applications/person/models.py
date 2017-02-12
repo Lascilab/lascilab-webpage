@@ -10,9 +10,9 @@ class Person(models.Model):
     Moel for a member, a memper is the public profile for a member of lascilab
     """
     # Profile picture
-    picture = models.ImageField(_('Picture'),upload_to='img',null=True,blank=True)
+    picture = models.ImageField(_('Picture'),upload_to='img/people',null=True,blank=True)
     # Name of the member
-    name = models.TextField(_('Name'),max_length=100)
+    name = models.CharField(_('Name'),max_length=100)
     # Email of the member
     email = models.EmailField(_('Email'))
     # Github URL of the member
@@ -24,7 +24,7 @@ class Person(models.Model):
     # web page url
     webpage_url = models.URLField(_('Web Page URL'),null=True,blank=True) 
     # Self description of the member
-    description = models.TextField(_('About Me'))
+    description = models.TextField(_('About Me'),null=True,blank=True)
     # Set of interest of the member
     interest = models.TextField(_('Areas of Interest'))
     # University or company

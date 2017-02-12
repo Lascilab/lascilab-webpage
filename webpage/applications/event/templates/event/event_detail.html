@@ -183,32 +183,49 @@ div.desc {
             <div class="tab-pane fade" id="nav-pills-tab-3">
               <p>
                 <ul class="media-list media-list-with-divider">
-                    <li class="media media-sm">
+                  {% for eventspeaker in event.eventspeaker_set.all|shuffle %}
+                  {% if forloop.counter|divisibleby:'2' %}
+                  <li class="media media-sm">
                       <a class="media-left" href="javascript:;">
-                        <img src="assets/img/user-5.jpg" alt="" class="media-object rounded-corner" />
+                        {% if eventspeaker.speaker.picture %}
+                        <img src="{{ eventspeaker.speaker.picture.url }}" alt="" class="media-object rounded-corner" />
+                        {% else %}
+                        <img src="/media/img/people/No_image.jpg" alt="No image" class="media-object rounded-corner" />
+                        {% endif %}
                       </a>
                       <div class="media-body">
-                        <h4 class="media-heading">Media heading</h4>
-                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, tempus viverra turpis.</p>
+                        <h4 class="media-heading">{{ eventspeaker.speaker.name }}</h4>
                         <p>
-                            <a href="javascript:;" class="btn btn-sm btn-danger m-r-5">Reject</a>
-                            <a href="javascript:;" class="btn btn-sm btn-default">Cancel</a>
+                          <ul style="list-style: none">
+                          {% for topic in eventspeaker.topics.all %}
+                          <li>{{ topic.name }}</li>
+                          {% endfor %}
+                          </ul>
                         </p>
+                        <p><strong>{{ eventspeaker.speaker.affiliation }}<br>{{ eventspeaker.speaker.laboratory }}</strong></p>
                     </div>
                   </li>
+                  {% else %}
                   <li class="media media-sm">
                       <div class="media-body text-right">
-                        <h4 class="media-heading">Nested media heading</h4>
-                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio,  tempus viverra turpis.</p>
-                        <p>
-                            <a href="javascript:;" class="btn btn-sm btn-success m-r-5">Published</a>
-                            <a href="javascript:;" class="btn btn-sm btn-default">Cancel</a>
-                        </p>
+                        <h4 class="media-heading">{{ eventspeaker.speaker.name }}</h4>
+                        <ul style="list-style: none">
+                        {% for topic in eventspeaker.topics.all %}
+                        <li>{{ topic.name }}</li>
+                        {% endfor %}
+                        </ul><br>
+                        <p><strong>{{ eventspeaker.speaker.affiliation }}<br>{{ eventspeaker.speaker.laboratory }}</strong></p>
                       </div>
                       <a class="media-right" href="javascript:;">
-                        <img src="assets/img/user-6.jpg" alt="" class="media-object rounded-corner" />
+                        {% if eventspeaker.speaker.picture %}
+                        <img src="{{ eventspeaker.speaker.picture.url }}" alt="" class="media-object rounded-corner" />
+                        {% else %}
+                        <img src="/media/img/people/No_image.jpg" alt="No image" class="media-object rounded-corner" />
+                        {% endif %}
                       </a>
                   </li>
+                  {% endif %}
+                  {% endfor %}
                 </ul>
               </p>
             </div>

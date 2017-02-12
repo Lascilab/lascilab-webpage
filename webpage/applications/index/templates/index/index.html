@@ -141,6 +141,8 @@
                                     <div class="image" data-animation="true" data-animation-type="flipInX">
                                         {% if member.picture %}
                                         <img  style="border-radius: 300px;" src="{{ member.picture.url }}" width="100px" height="100px"  alt="{{ member.name }}" />
+                                        {% else %}
+                                        <img  style="border-radius: 300px;" src="/media/img/people/No_image.jpg" width="100px" height="100px"  alt="No image" />
                                         {% endif %}
                                     </div>
                                     <div class="info">
@@ -176,9 +178,13 @@
                 <!-- end carousel-inner -->
                 <!-- begin carousel-indicators -->
                 <ol class="carousel-indicators">
+                    {% for paired in paired_members %}
+                    {% if forloop.first %}
                     <li data-target="#testimonials" data-slide-to="0" class="active"></li>
-                    <li data-target="#testimonials" data-slide-to="1" class=""></li>
-                    <li data-target="#testimonials" data-slide-to="2" class=""></li>
+                    {% else %}
+                    <li data-target="#testimonials" data-slide-to="{{ forloop.counter0 }}" class=""></li>
+                    {% endif %}
+                    {% endfor %}
                 </ol>
                 <!-- end carousel-indicators -->
             </div>
