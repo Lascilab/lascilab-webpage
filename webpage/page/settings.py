@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'applications.index.apps.IndexConfig',
     'applications.event.apps.EventConfig',
-    'applications.member.apps.MemberConfig',
+    'applications.person.apps.PersonConfig',
 ]
 
 MIDDLEWARE = [
@@ -149,6 +149,6 @@ if PRODUCTION:
     STATIC_ROOT = os.path.join(BASE_DIR,"static")
 else:
     # Extra places for collectstatic to find static files. in development
-    STATIC_ROOT = os.path.join(BASE_DIR,"static")
-    STATICFILES_DIRS = []
+    # STATIC_ROOT = os.path.join(BASE_DIR,"static")
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
     

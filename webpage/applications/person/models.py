@@ -1,10 +1,11 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.contrib.auth.models import Group
 from django.utils.translation import ugettext_lazy as _
 
 
-class Member(models.Model):
+class Person(models.Model):
     """
     Moel for a member, a memper is the public profile for a member of lascilab
     """
@@ -26,3 +27,24 @@ class Member(models.Model):
     description = models.TextField(_('About Me'))
     # Set of interest of the member
     interest = models.TextField(_('Areas of Interest'))
+    # University or company
+    affiliation = models.CharField(_('Affiliation'),max_length=500)
+    # Laboratory
+    laboratory = models.CharField(_('Laboratory'),max_length=500)
+    # groups
+    groups = models.ManyToManyField(
+        Group,
+        verbose_name=_('groups'),
+        blank=True,
+        help_text=_(
+            'The groups this user belongs to.'
+        ),
+        related_name="person_set"
+    )
+
+
+    def __str__(self):
+        return self.name
+
+    def __unicode__(self):
+        return self.name

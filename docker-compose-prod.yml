@@ -34,7 +34,6 @@
    nginx:
      restart: always
      image: 192.168.28.50:5000/nginx
-     #build: ./nginx
      ports: 
        - "80:80"
      volumes:

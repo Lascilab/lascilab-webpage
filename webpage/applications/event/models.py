@@ -1,17 +1,25 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from applications.person.models import Person
 from django.utils.translation import ugettext_lazy as _
-from applications.member.models import Member
 
 
 class Topic(models.Model):
     name = models.CharField(_('Topic'),max_length=400)
 
+    def __str__(self):
+        return self.name
+
+    def __unicode__(self):
+        return self.name
+
+
 class EventImage(models.Model):
     image = models.ImageField(_('Picture'),upload_to='img/events',null=True,blank=True)
 
 class Sponsor(models.Model):
+    name = models.CharField(_('Name'),max_length=400,null=True,blank=True)
     image = models.ImageField(_('Picture'),upload_to='img/events',null=True,blank=True)
     description = models.TextField(_('Description'),null=True,blank=True)
 
@@ -48,3 +56,21 @@ class Event(models.Model):
     images = models.ManyToManyField('EventImage')
     # Sponsors
     sponsors = models.ManyToManyField('Sponsor')
+
+    def __str__(self):
+        return self.name
+
+    def __unicode__(self):
+        return self.name
+
+
+class EventSpeaker(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    speaker = models.ForeignKey(Person, on_delete=models.CASCADE)
+    topics = models.ManyToManyField('Topic')
+
+    def __str__(self):
+        return self.speaker.name + ', ' + self.event.name
+
+    def __unicode__(self):
+        return self.speaker.name + ', ' + self.event.name

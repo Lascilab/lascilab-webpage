@@ -102,73 +102,133 @@ div.desc {
       <div class="blog-header">
         <center><h1 class="blog-title">{{  object.name }}</h1></center>
         <center><p class="lead blog-description"><img src="{{ object.banner.url }}" width="600" height="200"></p></center>
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"><img src="{% static 'img/lascilab.png' %}" width="40" height="40"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav nav-pills navbar-nav">
+                <li class="active"><a href="#nav-pills-tab-1" data-toggle="tab">Resumen</a></li>
+                <li><a href="#nav-pills-tab-2" data-toggle="tab">Programación</a></li>
+                <li><a href="#nav-pills-tab-3" data-toggle="tab">Expositores</a></li>
+              </ul>
+              <ul class="nav nav-pills navbar-nav navbar-right">
+                <li><a href="#nav-pills-tab-4" data-toggle="tab">Fotos</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!--/.container-fluid -->
+        </nav>
       </div>
 
       <div class="row">
-
         <div class="col-sm-8 blog-main">
-
-          <div class="blog-post">
-            <h2 class="blog-post-title">Detalles del Evento</h2>
-            <p>{{ event.important_notes }}</p>
-            <br><br>
-            <h3>Fechas Importantes</h3>
-            <div class="table-responsive">
-              <table class="table table-striped table-bordered">
-                <thead>
-                  <tr>
-                    <th>Inicio Incripciones</th>
-                    <th>Fin Inscripciones</th>
-                    <th>Notificación de Admisión</th>
-                    <th>Inicio Evento</th>
-                    <th>Fin Evento</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>{{ event.application_opening }}</td>
-                    <td>{{ event.application_deadline }}</td>
-                    <td>{{ event.admission_notification }}</td>
-                    <td>{{ event.start_date }}</td>
-                    <td>{{ event.end_date }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div><br><br>
-            <h3>Misión Escolar</h3>
-            <p>{{ event.mision }}</p><br><br>
-            <h3>Contenido</h3>
-            <p>El evento se enfocará en los siguientes temas:</p>
-            <ul>
-              {% for topic in event.topics.all %}
-              <li>{{ topic.name }}</li>
-              {% endfor %}
-            </ul><br><br>
-            <h3>Programación</h3>
-            <iframe width="800" height="600" src="{{ object.program }}"></iframe><br><br><br><br>
-            <h3>Lugar de Encuentro</h3>
-            <p>{{ event.venue }}</p><br><br>
-            <h3>Costo de registro</h3>
-            <p>{{ event.costs }}</p><br>
-          </div><!-- /.blog-post -->
-          <hr>
-          <br>
-          <br>
-          <div class="blog-post">
-            <h2 class="blog-post-title">Imagenes</h2>
-            {% for image in object.images.all %}
-            <div class="responsive">
-              <div class="img">
-                <a target="_blank" href="{{ image.image.url }}">
-                  <img src="{{ image.image.url }}" width="300" height="200">
-                </a>
-              </div>
+          <div class="tab-content">
+            <div class="tab-pane fade active in" id="nav-pills-tab-1">
+              <p>
+                <h2 class="blog-post-title">Detalles del Evento</h2>
+                <p>{{ event.important_notes }}</p>
+                <br><br>
+                <h3>Fechas Importantes</h3>
+                <div class="table-responsive">
+                  <table class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Inicio Incripciones</th>
+                        <th>Fin Inscripciones</th>
+                        <th>Notificación de Admisión</th>
+                        <th>Inicio Evento</th>
+                        <th>Fin Evento</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{ event.application_opening }}</td>
+                        <td>{{ event.application_deadline }}</td>
+                        <td>{{ event.admission_notification }}</td>
+                        <td>{{ event.start_date }}</td>
+                        <td>{{ event.end_date }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div><br><br>
+                <h3>Misión</h3>
+                <p>{{ event.mision }}</p><br><br>
+                <h3>Contenido</h3>
+                <p>El evento se enfocará en los siguientes temas:</p>
+                <ul>
+                  {% for topic in event.topics.all %}
+                  <li>{{ topic.name }}</li>
+                  {% endfor %}
+                </ul><br><br>
+                <h3>Lugar de Encuentro</h3>
+                <p>{{ event.venue }}</p><br><br>
+                <h3>Costo de registro</h3>
+                <p>{{ event.costs }}</p>
+              </p>
             </div>
-            {% endfor %}
-          </div><!-- /.blog-post -->
-          </div><!-- /.blog-main -->
+            <div class="tab-pane fade" id="nav-pills-tab-2">
+                <h3 class="m-t-10"Programación</h3>
+              <p>
+                <iframe width="800" height="600" src="{{ object.program }}"></iframe>
+              </p>
+            </div>
+            <div class="tab-pane fade" id="nav-pills-tab-3">
+              <p>
+                <ul class="media-list media-list-with-divider">
+                    <li class="media media-sm">
+                      <a class="media-left" href="javascript:;">
+                        <img src="assets/img/user-5.jpg" alt="" class="media-object rounded-corner" />
+                      </a>
+                      <div class="media-body">
+                        <h4 class="media-heading">Media heading</h4>
+                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, tempus viverra turpis.</p>
+                        <p>
+                            <a href="javascript:;" class="btn btn-sm btn-danger m-r-5">Reject</a>
+                            <a href="javascript:;" class="btn btn-sm btn-default">Cancel</a>
+                        </p>
+                    </div>
+                  </li>
+                  <li class="media media-sm">
+                      <div class="media-body text-right">
+                        <h4 class="media-heading">Nested media heading</h4>
+                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio,  tempus viverra turpis.</p>
+                        <p>
+                            <a href="javascript:;" class="btn btn-sm btn-success m-r-5">Published</a>
+                            <a href="javascript:;" class="btn btn-sm btn-default">Cancel</a>
+                        </p>
+                      </div>
+                      <a class="media-right" href="javascript:;">
+                        <img src="assets/img/user-6.jpg" alt="" class="media-object rounded-corner" />
+                      </a>
+                  </li>
+                </ul>
+              </p>
+            </div>
+            <div class="tab-pane fade" id="nav-pills-tab-4">
+              <p>
+                {% for image in object.images.all %}
+                <div class="responsive">
+                  <div class="img">
+                    <a target="_blank" href="{{ image.image.url }}">
+                      <img src="{{ image.image.url }}" width="300" height="200">
+                    </a>
+                  </div>
+                </div>
+                {% endfor %}
+              </p>
+            </div>
+          </div>
+         </div><!-- /.blog-main -->
 
-          <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="col-sm-3 col-sm-offset-1">
             <div class="sidebar-module sidebar-module-inset">
               <h4>Sponsor</h4>
               {% for sponsor in event.sponsors.all %}
@@ -180,24 +240,15 @@ div.desc {
               {% endfor %}
             </div><br><br>
             <div class="sidebar-module">
-              <h4>Archives</h4>
+              <h4>Archivos</h4>
               <ol class="list-unstyled">
-                <li><a href="#">March 2014</a></li>
-                <li><a href="#">February 2014</a></li>
-                <li><a href="#">January 2014</a></li>
-                <li><a href="#">December 2013</a></li>
-                <li><a href="#">November 2013</a></li>
-                <li><a href="#">October 2013</a></li>
-                <li><a href="#">September 2013</a></li>
-                <li><a href="#">August 2013</a></li>
-                <li><a href="#">July 2013</a></li>
-                <li><a href="#">June 2013</a></li>
-                <li><a href="#">May 2013</a></li>
-                <li><a href="#">April 2013</a></li>
+                {% for archive in event_list %}
+                <li><a href="{% url 'event:detail' archive.pk %}">{{ archive.end_date }}</a></li>
+                {% endfor %}
               </ol>
             </div><br><br>
             <div class="sidebar-module">
-              <h4>Otros</h4>
+              <h4>Redes</h4>
               <ol class="list-unstyled">
                 <li><a href="#">GitHub</a></li>
                 <li><a href="#">Twitter</a></li>

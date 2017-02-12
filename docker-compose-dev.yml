@@ -4,6 +4,7 @@
    postgres:
      restart: always 
      image: postgres
+     env_file: containers_environment_variables
      volumes:
        - ./postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
      expose:
@@ -22,13 +23,13 @@
      restart: always 
      build: ./webpage
      command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn page.wsgi -b 0.0.0.0:8000"
-     volumes: # map the current directory with a new webpage directory into the container (like share directories)
+     volumes: 
        - ./webpage:/webpage
      expose:
        - "8000"
      links:
        - postgres:postgres
-     env_file: containers_environment_variables # add the variables defined on this file into the container enviroment variables
+     env_file: containers_environment_variables
  
    nginx:
      restart: always
