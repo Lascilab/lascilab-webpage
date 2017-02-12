@@ -22,7 +22,7 @@
      hostname: production
      restart: always 
      build: ./webpage
-     command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn page.wsgi -b 0.0.0.0:8000"
+     command: bash -c "python manage.py makemigrations --noinput && python manage.py migrate --noinput && gunicorn page.wsgi -b 0.0.0.0:8000"
      volumes: 
        - ./webpage:/webpage
      expose:

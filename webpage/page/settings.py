@@ -28,6 +28,9 @@ SECRET_KEY = '2o^l#617!yt09y4az&)lviukvu!#s@*gygv(s9or_(ddlchx+-' if not PRODUCT
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False if PRODUCTION else True
 
+ADMINS = [
+    ('Aurelio Vivas', 'aurelio.vivas@correounivalle.edu.co')
+]
 
 
 ALLOWED_HOSTS = ['*'] if PRODUCTION else []

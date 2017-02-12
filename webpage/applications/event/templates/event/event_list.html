@@ -82,14 +82,22 @@ Laboratorio de redes
                   </a>
                 </td>
                 <td>
+                  {% if event.is_application_open %}
                   <a href="{{ event.registration_form_url }}">
                     <button type="button" class="btn btn-xs btn-success m-r-3"><i class="fa fa-edit"></i> Registro</button>
                   </a>
+                  {% else %}
+                  <button type="button" class="btn btn-xs btn-inverse m-r-3"><i class="fa fa-edit"></i> Cerrado</button>
+                  {% endif %}
                 </td>
                 <td>
+                  {% if event.is_application_open %}
                   <a href="{{ event.feedback_form_url }}">
                     <button type="button" class="btn btn-xs btn-success m-r-3"><i class="fa fa-file-text"></i>  Encuesta</button>
                   </a>
+                  {% else %}
+                  <button type="button" class="btn btn-xs btn-inverse m-r-3"><i class="fa fa-file-text"></i> Cerrado</button>
+                  {% endif %}
                 </td>
               </tr>
               {% endfor %}

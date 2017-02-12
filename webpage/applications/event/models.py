@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from applications.person.models import Person
 from django.utils.translation import ugettext_lazy as _
+from datetime import date
 
 
 class Topic(models.Model):
@@ -62,6 +63,9 @@ class Event(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def is_application_open(self):
+        return self.application_opening >= date.today and self.application_opening < self.application_deadline 
 
 
 class EventSpeaker(models.Model):
