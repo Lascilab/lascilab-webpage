@@ -3,7 +3,7 @@
  services:
    postgres:
      restart: always # restart db service if it crashes
-     image: 192.168.28.50:5000/postgres:1.1
+     image: 192.168.28.50:5000/postgres:1.2
      env_file: containers_environment_variables
      volumes:
        - ./postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
@@ -12,7 +12,7 @@
 
    git:
       restart: always
-      image: 192.168.28.50:5000/lascilab/wiki
+      image: 192.168.28.50:5000/wiki
       volumes:
         - /srv/html
       expose:

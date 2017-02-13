@@ -65,7 +65,7 @@ class Event(models.Model):
         return self.name
 
     def is_application_open(self):
-        return self.application_opening >= date.today and self.application_opening < self.application_deadline 
+        return self.application_opening >= date.today() and self.application_opening < self.application_deadline 
 
 
 class EventSpeaker(models.Model):
