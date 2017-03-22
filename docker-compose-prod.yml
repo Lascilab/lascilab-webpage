@@ -32,6 +32,7 @@
      env_file: containers_environment_variables
  
    nginx:
+     build : ./nginx/
      restart: always
      image: 192.168.28.50:5000/nginx
      ports: 

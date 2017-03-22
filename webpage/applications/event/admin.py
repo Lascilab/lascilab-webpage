@@ -14,6 +14,7 @@ class EventAdmin(admin.ModelAdmin):
     fieldsets = (
         (_('Overview'), 
             {'fields': (
+	        'name',
                 'banner', 
                 'important_notes',
                 'mision',
