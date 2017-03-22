@@ -4,13 +4,10 @@
 This is the source code of the "Laboratorio de redes y sistemas distribuidos" webpage, it was wrote using python2.7+.
 
 ## For deploy in production
-Install Docker and Docker Compose.
+Install Docker and Docker Compose. If you want to restore the data backup, use the following command.
 
 ```bash
-./borrar.sh
-./ejecutar.sh
-docker-compose exec web ./manage.py migrate
-docker-compose exec web ./manage.py createsuperuser
+docker-compose exec web ./manage.py loaddata backup.json
 ```
 
 If the migration command fails, wait at least 1m (while mysql starts) and re-run the command
