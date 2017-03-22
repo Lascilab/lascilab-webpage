@@ -253,21 +253,19 @@
   }
 },
 {
-  "model": "auth.user",
+  "model": "auth.group",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$30000$swaB7KFEBRSE$1kfQEEz31wNDzsjBbzA4fEiLOgS8LNGMhD6mDsUNxw4=",
-    "last_login": "2017-03-20T19:33:48.476Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "",
-    "last_name": "",
-    "email": "admin@gmail.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2017-01-25T17:37:49.455Z",
-    "groups": [],
-    "user_permissions": []
+    "name": "Member",
+    "permissions": []
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 2,
+  "fields": {
+    "name": "Asociado",
+    "permissions": []
   }
 },
 {
@@ -464,6 +462,24 @@
     "affiliation": "Universidad del Quindio",
     "laboratory": "Grupo Grid",
     "groups": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$30000$swaB7KFEBRSE$1kfQEEz31wNDzsjBbzA4fEiLOgS8LNGMhD6mDsUNxw4=",
+    "last_login": "2017-03-22T06:25:15.289Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2017-01-25T17:37:49.455Z",
+    "groups": [],
+    "user_permissions": []
   }
 }
 ]

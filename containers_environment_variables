@@ -5,3 +5,6 @@ DB_USER=lascilab
 DB_PASS=lascilab
 DB_SERVICE=postgres
 DB_PORT=5432
+POSTGRES_DB=lascilab
+POSTGRES_PASSWORD=lascilab
+POSTGRES_USER=lascilab
