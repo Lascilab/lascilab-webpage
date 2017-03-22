@@ -2,7 +2,7 @@
  version: '2'
  services:
    postgres:
-     restart: always 
+     restart: always # restart db service if it crashes
      image: postgres
      env_file: containers_environment_variables
      volumes:
@@ -10,18 +10,19 @@
      expose:
        - "5432"
 
-   git:
+   wiki:
+      build : ./wiki/
       restart: always
-      build: ./wiki
+      image: wiki
       volumes:
         - /srv/html
       expose:
         - "3000"
 
-   web: 
+   web:
      hostname: production
-     restart: always 
-     build: ./webpage
+     restart: always # restart web server if it crashes
+     image: web
      command: bash -c "python manage.py makemigrations --noinput && python manage.py migrate --noinput && gunicorn page.wsgi -b 0.0.0.0:8000"
      volumes: 
        - ./webpage:/webpage
@@ -32,16 +33,15 @@
      env_file: containers_environment_variables
  
    nginx:
+     build : ./nginx/
      restart: always
-     build: ./nginx
+     image: nginx
      ports: 
        - "80:80"
-     volumes_from:
-       - web
-     links:
-       - web:web
      volumes:
        - /www/static
      volumes_from:
        - web
        - git
+     links:
+       - web:web
