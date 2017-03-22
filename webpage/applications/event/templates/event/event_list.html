@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block title %}
-Laboratorio de redes
+Networks and distributed systems laboratory
 {% endblock %}
 
 {% block header %}
@@ -50,23 +50,23 @@ Laboratorio de redes
   <!-- end content-bg -->
   <!-- begin container -->
   <div class="container home-content">
-    <h2 class="text-theme">Eventos</h2>
+    <h2 class="text-theme">Events</h2>
     <div class="panel panel-inverse">
       <div class="panel-heading">
-        <h4 class="panel-title">Calendario de Eventos</h4>
+        <h4 class="panel-title">Events schedule</h4>
       </div>
       <div class="panel-body">
         <div class="table-responsive">
           <table class="table table-striped table-bordered">
             <thead>
               <tr>
-                <th>Inicio Incripciones</th>
-                <th>Fin Inscripciones</th>
-                <th>Inicio del Evento</th>
-                <th>Fin del Evento</th>
-                <th>Nombre</th>
-                <th>Registro</th>
-                <th>Retroalimentación</th>
+                <th>Open enrollment</th>
+                <th>Closing of registrations</th>
+                <th>Event start</th>
+                <th>Event closure</th>
+                <th>Name</th>
+                <th>Registry</th>
+                <th>Feedback</th>
               </tr>
             </thead>
             <tbody>
@@ -84,19 +84,19 @@ Laboratorio de redes
                 <td>
                   {% if event.is_application_open %}
                   <a href="{{ event.registration_form_url }}">
-                    <button type="button" class="btn btn-xs btn-success m-r-3"><i class="fa fa-edit"></i> Registro</button>
+                    <button type="button" class="btn btn-xs btn-success m-r-3"><i class="fa fa-edit"></i> Registry</button>
                   </a>
                   {% else %}
-                  <button type="button" class="btn btn-xs btn-inverse m-r-3"><i class="fa fa-edit"></i> Cerrado</button>
+                  <button type="button" class="btn btn-xs btn-inverse m-r-3"><i class="fa fa-edit"></i> Closed</button>
                   {% endif %}
                 </td>
                 <td>
                   {% if event.is_application_open %}
                   <a href="{{ event.feedback_form_url }}">
-                    <button type="button" class="btn btn-xs btn-success m-r-3"><i class="fa fa-file-text"></i>  Encuesta</button>
+                    <button type="button" class="btn btn-xs btn-success m-r-3"><i class="fa fa-file-text"></i> Poll</button>
                   </a>
                   {% else %}
-                  <button type="button" class="btn btn-xs btn-inverse m-r-3"><i class="fa fa-file-text"></i> Cerrado</button>
+                  <button type="button" class="btn btn-xs btn-inverse m-r-3"><i class="fa fa-file-text"></i> Closed</button>
                   {% endif %}
                 </td>
               </tr>
