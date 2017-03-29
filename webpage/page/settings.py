@@ -32,6 +32,17 @@ DEBUG = False if PRODUCTION else True
 ALLOWED_HOSTS = ['*'] if PRODUCTION else []
 
 
+ADMINS = [
+    ('Aurelio Vivas', 'aurelio.vivas@correounivalle.edu.co')
+]
+
+# https://support.google.com/accounts/answer/6010255
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = "587"
+EMAIL_HOST_USER = "lascilab.webpage@gmail.com"
+EMAIL_HOST_PASSWORD = "lascilab"
+EMAIL_USE_TLS = True
+
 # Application definition
 
 INSTALLED_APPS = [

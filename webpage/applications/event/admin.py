@@ -15,7 +15,7 @@ class EventAdmin(admin.ModelAdmin):
         (_('Overview'), 
             {'fields': (
 	        'name',
-                'banner', 
+                'event banner', 
                 'important_notes',
                 'mision',
                 'program',
@@ -40,7 +40,7 @@ admin.site.register(Event,EventAdmin)
 
 
 class TopicAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+    list_display = ('name','description')
     search_fields = ('name',)
     list_filter = ('name',)
 

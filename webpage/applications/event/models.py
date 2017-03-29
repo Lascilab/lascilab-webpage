@@ -8,6 +8,7 @@ from datetime import date
 
 class Topic(models.Model):
     name = models.CharField(_('Topic'),max_length=400)
+    description = models.TextField(_('Description'))
 
     def __str__(self):
         return self.name
@@ -17,12 +18,25 @@ class Topic(models.Model):
 
 
 class EventImage(models.Model):
+    name = models.CharField(_('Image Name'),max_length=400)
     image = models.ImageField(_('Picture'),upload_to='img/events',null=True,blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def __unicode__(self):
+        return self.name
 
 class Sponsor(models.Model):
     name = models.CharField(_('Name'),max_length=400,null=True,blank=True)
     image = models.ImageField(_('Picture'),upload_to='img/events',null=True,blank=True)
     description = models.TextField(_('Description'),null=True,blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def __unicode__(self):
+        return self.name
 
 class Event(models.Model):
     """
@@ -30,7 +44,7 @@ class Event(models.Model):
     """
     name = models.CharField(_('Name'),max_length=400,null=True,blank=True)
     # Event banner or picture
-    banner = models.ImageField(_('Picture'),upload_to='img/events',null=True,blank=True)
+    banner = models.OneToOneField('EventImage',related_name='banner_event')
     # Important notes about the event
     important_notes = models.TextField(_('Important Notes'),null=True,blank=True)
     # Important dates about the event
