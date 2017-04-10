@@ -74,8 +74,8 @@ Networks and distributed systems laboratory
               <tr>
                 <td>{{ event.application_opening }}</td>
                 <td>{{ event.application_deadline }}</td>
-                <td>{{ event.start_date }}</td>
-                <td>{{ event.end_date }}</td>
+                <td>{{ event.start_date|default:"Pending" }}</td>
+                <td>{{ event.end_date|default:"Pending" }}</td>
                 <td>
                   <a href="{% url 'event:detail' event.pk %}">
                     {{ event.name }}

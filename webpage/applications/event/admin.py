@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Event, Topic, EventImage, Sponsor, EventSpeaker
+from .models import *
 from django.utils.translation import ugettext_lazy as _
 
 class EventAdmin(admin.ModelAdmin):
@@ -15,7 +15,7 @@ class EventAdmin(admin.ModelAdmin):
         (_('Overview'), 
             {'fields': (
 	        'name',
-                'event banner', 
+                'banner', 
                 'important_notes',
                 'mision',
                 'program',
@@ -38,7 +38,6 @@ class EventAdmin(admin.ModelAdmin):
 
 admin.site.register(Event,EventAdmin)
 
-
 class TopicAdmin(admin.ModelAdmin):
     list_display = ('name','description')
     search_fields = ('name',)
@@ -46,17 +45,17 @@ class TopicAdmin(admin.ModelAdmin):
 
 admin.site.register(Topic,TopicAdmin)
 
-class EventImageAdmin(admin.ModelAdmin):
+class ImageAdmin(admin.ModelAdmin):
     list_display = ('image',)
 
-admin.site.register(EventImage,EventImageAdmin)
+admin.site.register(Image,ImageAdmin)
 
 class SponsorAdmin(admin.ModelAdmin):
-    list_display = ('name','image','description')
+    list_display = ('name','image')
 
 admin.site.register(Sponsor,SponsorAdmin)
 
-class EventSpeakerAdmin(admin.ModelAdmin):
-    list_display = ('event','speaker')
+class SpeakerAdmin(admin.ModelAdmin):
+    list_display = ('event','person')
 
-admin.site.register(EventSpeaker,EventSpeakerAdmin)
+admin.site.register(Speaker,SpeakerAdmin)

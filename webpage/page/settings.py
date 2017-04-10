@@ -92,28 +92,39 @@ WSGI_APPLICATION = 'page.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-SQLITE = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# SQLITE = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
-try:
-    POSTGRES = {
+# try:
+#     POSTGRES = {
+#             'default': {
+#                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#                 'NAME': os.environ['DB_NAME'],
+#                 'USER': os.environ['DB_USER'],
+#                 'PASSWORD': os.environ['DB_PASS'],
+#                 'HOST': os.environ['DB_SERVICE'],
+#                 'PORT': os.environ['DB_PORT']
+#             }
+#         }
+# except KeyError:
+#     POSTGRES = None
+    
+# DATABASES = POSTGRES if PRODUCTION else SQLITE
+
+DATABASES =  {
             'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                'NAME': os.environ['DB_NAME'],
-                'USER': os.environ['DB_USER'],
-                'PASSWORD': os.environ['DB_PASS'],
-                'HOST': os.environ['DB_SERVICE'],
-                'PORT': os.environ['DB_PORT']
+                'NAME': 'lascilab',
+                'USER': 'lascilab',
+                'PASSWORD': 'lascilab',
+                'HOST': '172.18.02',
+                'PORT': '5432'
             }
         }
-except KeyError:
-    POSTGRES = None
-    
-DATABASES = POSTGRES if PRODUCTION else SQLITE
 
 
 # Password validation
@@ -153,13 +164,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-if PRODUCTION:
-    STATIC_ROOT = os.path.join(BASE_DIR,"static")
-else:
-    # Extra places for collectstatic to find static files. in development
-    STATIC_ROOT = os.path.join(BASE_DIR,"static")
-    STATICFILES_DIRS = []
+# if PRODUCTION:
+#     STATIC_ROOT = os.path.join(BASE_DIR,"static")
+# else:
+#     # Extra places for collectstatic to find static files. in development
+#     STATIC_ROOT = os.path.join(BASE_DIR,"static")
+#     STATICFILES_DIRS = []
     

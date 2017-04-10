@@ -17,26 +17,27 @@ class Topic(models.Model):
         return self.name
 
 
-class EventImage(models.Model):
+class Image(models.Model):
     name = models.CharField(_('Image Name'),max_length=400)
     image = models.ImageField(_('Picture'),upload_to='img/events',null=True,blank=True)
 
     def __str__(self):
-        return self.name
+        return self.name or "without name"
 
     def __unicode__(self):
-        return self.name
+        return self.name or "without name"
+
 
 class Sponsor(models.Model):
     name = models.CharField(_('Name'),max_length=400,null=True,blank=True)
     image = models.ImageField(_('Picture'),upload_to='img/events',null=True,blank=True)
-    description = models.TextField(_('Description'),null=True,blank=True)
-
+    
     def __str__(self):
-        return self.name
+        return self.name or "without name"
 
     def __unicode__(self):
-        return self.name
+        return self.name or "without name"
+
 
 class Event(models.Model):
     """
@@ -44,12 +45,12 @@ class Event(models.Model):
     """
     name = models.CharField(_('Name'),max_length=400,null=True,blank=True)
     # Event banner or picture
-    banner = models.OneToOneField('EventImage',related_name='banner_event')
+    banner = models.ImageField(_('Image'))
     # Important notes about the event
     important_notes = models.TextField(_('Important Notes'),null=True,blank=True)
     # Important dates about the event
-    application_opening = models.DateField(_('Application Opening'),null=True,blank=True)
-    application_deadline = models.DateField(_('Application Deadline'),null=True,blank=True)
+    application_opening = models.DateField(_('Application Opening'))
+    application_deadline = models.DateField(_('Application Deadline'))
     admission_notification = models.DateField(_('Admission Notification'),null=True,blank=True)
     start_date = models.DateTimeField(_('Start Date'),null=True,blank=True)
     end_date = models.DateTimeField(_('End Date'),null=True,blank=True)
@@ -68,7 +69,7 @@ class Event(models.Model):
     # Picture of the event schedule
     program = models.URLField(_('Program URL'),null=True,blank=True)
     # Event images
-    images = models.ManyToManyField('EventImage')
+    images = models.ManyToManyField('Image',null=True,blank=True)
     # Sponsors
     sponsors = models.ManyToManyField('Sponsor')
 
@@ -82,13 +83,13 @@ class Event(models.Model):
         return self.application_opening >= date.today() and self.application_opening < self.application_deadline 
 
 
-class EventSpeaker(models.Model):
+class Speaker(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
-    speaker = models.ForeignKey(Person, on_delete=models.CASCADE)
+    person = models.ForeignKey(Person, on_delete=models.CASCADE)
     topics = models.ManyToManyField('Topic')
 
     def __str__(self):
-        return self.speaker.name + ', ' + self.event.name
+        return self.person.name + ', ' + self.event.name
 
     def __unicode__(self):
-        return self.speaker.name + ', ' + self.event.name
+        return self.person.name + ', ' + self.event.name
