@@ -165,11 +165,7 @@ div.desc {
                 <p>The event will be:</p>
                 <ul>
                   {% for topic in event.topics.all %}
-                <li>Introducción a Linux</li>
-                <li>HTCondor</li>
-                <li>Programación en Paralelo, Fundamentos, Hilos de Ejecución</li>
-                <li>Programación en Paralelo GPGPU</li>
-                <li>Contenedores con Singularity/Docker</li>
+                
                   <li>{{ topic.name }}</li>
                   {% endfor %}
                 </ul><br><br>
