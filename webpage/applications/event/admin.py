@@ -30,6 +30,7 @@ class EventAdmin(admin.ModelAdmin):
             'admission_notification',
             'start_date',
             'end_date')}),
+        (_('Syllabus'), {'fields': ('topics',)}),
         (_('Images'), {'fields': ('images',)}),
         (_('Sponsors'), {'fields': ('sponsors',)}),
     )
