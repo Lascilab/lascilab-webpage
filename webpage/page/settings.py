@@ -40,7 +40,7 @@ ADMINS = [
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = "587"
 EMAIL_HOST_USER = "lascilab.webpage@gmail.com"
-EMAIL_HOST_PASSWORD = "lascilab"
+EMAIL_HOST_PASSWORD = "lascilab 2016"
 EMAIL_USE_TLS = True
 
 # Application definition

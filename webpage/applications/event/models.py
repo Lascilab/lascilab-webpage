@@ -69,9 +69,9 @@ class Event(models.Model):
     # Picture of the event schedule
     program = models.URLField(_('Program URL'),null=True,blank=True)
     # Event images
-    images = models.ManyToManyField('Image',null=True,blank=True)
+    images = models.ManyToManyField('Image',blank=True)
     # Sponsors
-    sponsors = models.ManyToManyField('Sponsor')
+    sponsors = models.ManyToManyField('Sponsor',blank=True)
 
     def __str__(self):
         return self.name
