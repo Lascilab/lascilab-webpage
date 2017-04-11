@@ -1,6 +1,6 @@
 # Network-lab
 <p align="center">
-<img src="https://avatars2.githubusercontent.com/u/20485166?v=3&s=200" width="350"/> 
+<img src="https://avatars2.githubusercontent.com/u/20485166?v=3&s=200" width="250"/> 
 </p>
 
 This is the source code of the "Laboratorio de redes y sistemas distribuidos" webpage, it was wrote using python2.7+.
