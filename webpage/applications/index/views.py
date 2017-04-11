@@ -9,13 +9,17 @@ class Index(TemplateView):
     def get_context_data(self,**kwargs):
         context = super(Index,self).get_context_data(**kwargs)
         try:
-	    group = Group.objects.get(name='Member')
-	    members = list(group.person_set.all())
+            group = Group.objects.get(name='Member')
+            members = list(group.person_set.all())
             shuffle(members)
             chunk_size = 3
             paired_members = [members[i:i + chunk_size] for i in range(0, len(members), chunk_size)]
             context['paired_members'] = paired_members
-	except Exception:
-            context['paired_members'] = []
 
-	return context
+            director_group = Group.objects.get(name='Director')
+            context['director'] = list(director_group.person_set.all())[0]
+        except Exception:
+            context['paired_members'] = []
+            context['director'] = None
+
+        return context

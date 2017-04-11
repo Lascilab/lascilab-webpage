@@ -31,7 +31,7 @@ Networks and distributed systems laboratory
   <!-- begin navbar-collapse -->
   <div class="collapse navbar-collapse" id="header-navbar">
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="{% url 'index:index' %}">INICIO</a></li>
+      <li><a href="{% url 'index:index' %}">HOME</a></li>
     </ul>
   </div>
   <!-- end navbar-collapse -->
@@ -84,19 +84,19 @@ Networks and distributed systems laboratory
                 <td>
                   {% if event.is_application_open %}
                   <a href="{{ event.registration_form_url }}">
-                    <button type="button" class="btn btn-xs btn-success m-r-3"><i class="fa fa-edit"></i> Registry</button>
+                    <i class="fa fa-edit"></i> Registry
                   </a>
                   {% else %}
-                  <button type="button" class="btn btn-xs btn-inverse m-r-3"><i class="fa fa-edit"></i> Closed</button>
+                  <i class="fa fa-edit"></i> Closed
                   {% endif %}
                 </td>
                 <td>
                   {% if event.is_application_open %}
                   <a href="{{ event.feedback_form_url }}">
-                    <button type="button" class="btn btn-xs btn-success m-r-3"><i class="fa fa-file-text"></i> Poll</button>
+                    <i class="fa fa-file-text"></i> Poll
                   </a>
                   {% else %}
-                  <button type="button" class="btn btn-xs btn-inverse m-r-3"><i class="fa fa-file-text"></i> Closed</button>
+                  <i class="fa fa-file-text"></i> Closed
                   {% endif %}
                 </td>
               </tr>

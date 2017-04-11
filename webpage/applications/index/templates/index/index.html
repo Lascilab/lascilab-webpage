@@ -15,10 +15,10 @@
             <!-- begin container -->
             <div class="container home-content">
                 <h1>Large Scale Infrastructure Laboratory</h1>
-                <h5>
+                <h6>
                     In addition to being a space to share knowledge. This laboratory aims to open the possibilities of High Performance Computing to those dependencies of the Universidad del Valle whose research processes demand great computational power. 
                     Experimental Reproducibility, Containerization (Docker, Singularity, Kubernetes), HPC Platforms (Jetson TK1, Slurm), HTC Platforms (HTCondor) and Parallel Computing (OpenMP, CUDA, MPI) are some of our research areas. 
-                </h5>
+                </h6>
                 <div>
                     <br>
                     <div><img src="{% static 'img/uv.png' %}" width="50" height="70"></div><br>
@@ -42,45 +42,53 @@
                       <div class="row">
                         <div class="col-sm-8 blog-main">
                           <div class="blog-post">
-                            <h2 class="blog-post-title"><strong>¿Quienes somos?</strong></h2>
-                            <p>
-                                El laboratorio de Redes y Sistemas Distribuidos de la Universidad del Valle, fue creado con el propósito de ser un espacio que facilite
-                                las practicas y experimentación en infraestructuras basadas en redes de computadoras. A mediados del 2015 con la idea de apoyar los 
-                                procesos de invetigación y fortalercer el <a href="#">Cluster Computacional de Univalle</a>, se articuló con el objetivo de ayudar a estudiantes de Pregrado,
-                                Maestria y Doctorado de las distintas facultades a acelerar sus investigaciones desplegando sus experimentos en plataformas de alto rendimento 
-                                (Cluster,Computadores Paralelos,GPUs). <br> <br>
-
-                                El laboratorio de Redes y Sistemas Distribuidos, adicionalmente es un espacio dedicado a la docencia e investigación, dirigido por el Profesor John Sanabria,PhD. Es usado como ambiente de pruebas para los cursos de sistemas operativos, redes y sistemas distribuidos. En este espacio los estudiantes tienen la posibilidad de explorar diferentes tecnologías de computación distribuida a través de ambientes virtuales de computación.
-                            </p>
+                            <h2 class="blog-post-title"><strong>About Us</strong></h2>
                             <hr>
-                            <h2><strong>¿Con que Infraestructura Contamos?</strong></h2>
-                              <div class="row">
+                            <p>
+                            <div class="height-sm" data-scrollbar="true">
+                                <ul class="media-list media-list-with-divider media-messaging">
+                                    <li class="media">
+                                        <a href="javascript:;" class="pull-left">
+                                            <img src="{{ director.picture.url }}" alt="" width="100px" height="160px" class="media-object" />
+                                        </a>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">
+                                            {{ director.name }}, Ph.D. (Director) <br>
+                                            Proffesor at Escuela de Ingeniería de Sistemas y Computación
+                                            </h5>
+                                            <p>Lascilab, better known in <a href="http://www.univalle.edu.co/">Universidad del Valle</a> as Network and Distributed Systems Laboratory was created to be a space that make easy the practice and experimentation related with large scale computer infraestructures. In mid-2015, with the goal of supporting research and software development processes, this laboratory make available to the educational community the services of the <a href="http://lascilab.univalle.edu.co/wiki/">Univalle's Computational Cluster</a>. 
+                                            <br> The Networks and Distribute System Laboratory is in addition a space dedicated to teaching and research for courses like Operative Systems, Networks and Distributed Systems.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="row">
                                 <div class="col-sm-4">
-                                  <p>Cluster, el <a href="#">Cluster Computacional de Univalle</a> es una infraestructura computacional, compuesta por un conglomerado de computadores unidos entre sí por una red de alta velocidad y alto poder de computo, destinado al calculo cientifico.</p>
+                                  <p>                                    
+                                      The Univalle Cluster is a computational infrastructure consisting of a set of high end computers connected by a high speed network available for scientific purposes.
+                                  </p>
                                   <img src="{% static 'img/index/blade.jpg'%}" class="img-responsive margin" style="width:100%" alt="Image">
                                 </div>
                                 <div class="col-sm-4">
-                                  <p>Intel Galileo, es un dispositivo tipo Arduino basado en la arquitectura de x86.</p>
+                                  <p><a href="https://software.intel.com/en-us/articles/when-to-use-the-intel-galileo-board">Intel Galileo</a>, is an Arduino device based on x86 architecture ideal for Internet of Things (IoT) projects.</p>
                                   <img src="{% static 'img/index/galileo.jpg'%}" class="img-responsive margin" style="width:100%" alt="Image">
                                 </div>
                                 <div class="col-sm-4">
                                   <p>
-                                    Dispositivo GPU NVIDIA Embebido para processamiento masivo de datos (normalmente datos en forma vectorial o matricial), 
-                                    es una de las plataformas disponibles en en día para computación de alto rendimeinto (HPC en ingles) con bajo consumo energético. 
-                                    popular en proyectos basado en <a href="#">Deep Learning</a>, <a href="#">Simulación</a>, <a href="#">Algebra Lineal</a>, <a href="#">Visión por Computador</a>, etc.
+                                  NVIDIA GPU embeded device for massive data processing (typically data in vector or matrix form), it is one of the platforms available today in High Performace Computing (HPC in English) with low energy consumption. It is present in projects based on Deep Learning , Linear Algebra , Computer Vision. More details <a href="http://elinux.org/Jetson_TK1">here</a>.
                                   </p>
                                   <img src="{% static 'img/index/jetsontk1.jpg'%}" class="img-responsive margin" style="width:100%" alt="Image">
                                 </div>
-                              </div>
-                              <hr>
+                            </div>
                         </div><!-- /.blog-main -->
                     </div>
                     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
                           <div class="sidebar-module sidebar-module-inset">
-                            <h4>Eventos</h4>
+                            <h3>Events</h3>
                             <div>
-                                <p class="blog-post-meta">Noviembre 9, 2016 por <a href="#">Aurelio Vivas</a></p>
-                                <a href="#"><h5>I Seminario Plataformas Computacionales </h5></a>
+                                <p class="blog-post-meta">November 9, 2016 por <a href="#">Aurelio Vivas</a></p>
+                                <a href="#"><h5>I Workshop Computational platforms </h5></a>
                                 <iframe width="200" height="200" src="https://www.youtube.com/embed/VsWZeveYbrM?list=PLNqsgMwXL3mHn8_UgzsVe_ZzEOl5zf0XN" frameborder="0" allowfullscreen></iframe>
                                 <div id="demo" class="collapse">
                                     <dl>
@@ -117,7 +125,7 @@
     <div id="team" class="content bg-black-darker has-bg" data-scrollview="true">
         <!-- begin container -->
         <div class="container" data-animation="true" data-animation-type="fadeInUp">
-            <h2 class="content-title">Equipo</h2>
+            <h2 class="content-title">Team</h2>
             <!-- begin carousel -->
             <div class="carousel testimonials slide" data-ride="carousel" id="testimonials">
                 <!-- begin carousel-inner -->
@@ -198,21 +206,18 @@
 <div id="contact" class="content bg-silver-lighter" data-scrollview="true">
     <!-- begin container -->
     <div class="container">
-        <h2 class="content-title">Contactenos</h2>
+        <h2 class="content-title">Contact</h2>
         <p class="content-desc">
         </p>
         <!-- begin row -->
         <div class="row">
             <!-- begin col-12 -->
             <div class="col-md-12" data-animation="true" data-animation-type="fadeInLeft">
-                <h3>Si tiene proyectos que quiere discutir con nosotros, contactenos.</h3>
+                <h3>If you have projects you want to discuss with us, contact us.</h3>
                 <p>
-                    
-                </p>
-                <p>
-                    <strong>Laboratorio de redes y servidores</strong><br />
+                    <strong>Laboratorio de Redes y Servidores</strong><br />
                     Edif. 331, espacio 2072<br />
-                    Sede Melendez<br />
+                    Universidad del valle, Sede Melendez<br />
                     Cali, Valle del Cauca, Colombia<br />
                 </p>
                 <p>

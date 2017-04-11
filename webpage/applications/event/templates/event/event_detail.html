@@ -82,8 +82,8 @@ div.desc {
   <!-- begin navbar-collapse -->
   <div class="collapse navbar-collapse" id="header-navbar">
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="{% url 'index:index' %}">INICIO</a></li>
-      <li><a href="{% url 'event:list' %}">EVENTOS</a></li>
+      <li><a href="{% url 'index:index' %}">HOME</a></li>
+      <li><a href="{% url 'event:list' %}">EVENTS</a></li>
     </ul>
   </div>
   <!-- end navbar-collapse -->
@@ -172,10 +172,9 @@ div.desc {
                 <p>{{ event.venue }}</p><br><br>
                 <h3>Resgistry cost</h3>
                 <p>{{ event.costs }}</p>
-              </p>
             </div>
             <div class="tab-pane fade" id="nav-pills-tab-2">
-                <h3 class="m-t-10"Syllabus</h3>
+                <h3 class="m-t-10">Syllabus</h3>
               <p>
                 <iframe width="800" height="600" src="{{ object.program }}"></iframe>
               </p>
@@ -183,42 +182,42 @@ div.desc {
             <div class="tab-pane fade" id="nav-pills-tab-3">
               <p>
                 <ul class="media-list media-list-with-divider">
-                  {% for eventspeaker in event.eventspeaker_set.all|shuffle %}
+                  {% for speaker in event.speaker_set.all|shuffle %}
                   {% if forloop.counter|divisibleby:'2' %}
                   <li class="media media-sm">
                       <a class="media-left" href="javascript:;">
-                        {% if eventspeaker.speaker.picture %}
-                        <img src="{{ eventspeaker.speaker.picture.url }}" alt="" class="media-object rounded-corner" />
+                        {% if speaker.person.picture %}
+                        <img src="{{ speaker.picture.url }}" alt="" class="media-object rounded-corner" />
                         {% else %}
                         <img src="/media/img/people/No_image.jpg" alt="No image" class="media-object rounded-corner" />
                         {% endif %}
                       </a>
                       <div class="media-body">
-                        <h4 class="media-heading">{{ eventspeaker.speaker.name }}</h4>
+                        <h4 class="media-heading">{{ speaker.person.name }}</h4>
                         <p>
                           <ul style="list-style: none">
-                          {% for topic in eventspeaker.topics.all %}
+                          {% for topic in speaker.topics.all %}
                           <li>{{ topic.name }}</li>
                           {% endfor %}
                           </ul>
                         </p>
-                        <p><strong>{{ eventspeaker.speaker.affiliation }}<br>{{ eventspeaker.speaker.laboratory }}</strong></p>
+                        <p><strong>{{ speaker.person.affiliation }}<br>{{ speaker.person.laboratory }}</strong></p>
                     </div>
                   </li>
                   {% else %}
                   <li class="media media-sm">
                       <div class="media-body text-right">
-                        <h4 class="media-heading">{{ eventspeaker.speaker.name }}</h4>
+                        <h4 class="media-heading">{{ speaker.person.name }}</h4>
                         <ul style="list-style: none">
-                        {% for topic in eventspeaker.topics.all %}
+                        {% for topic in speaker.topics.all %}
                         <li>{{ topic.name }}</li>
                         {% endfor %}
                         </ul><br>
-                        <p><strong>{{ eventspeaker.speaker.affiliation }}<br>{{ eventspeaker.speaker.laboratory }}</strong></p>
+                        <p><strong>{{ speaker.person.affiliation }}<br>{{ speaker.person.laboratory }}</strong></p>
                       </div>
                       <a class="media-right" href="javascript:;">
-                        {% if eventspeaker.speaker.picture %}
-                        <img src="{{ eventspeaker.speaker.picture.url }}" alt="" class="media-object rounded-corner" />
+                        {% if speaker.person.picture %}
+                        <img src="{{ speaker.person.picture.url }}" alt="" class="media-object rounded-corner" />
                         {% else %}
                         <img src="/media/img/people/No_image.jpg" alt="No image" class="media-object rounded-corner" />
                         {% endif %}

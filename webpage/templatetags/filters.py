@@ -5,4 +5,8 @@ register = template.Library()
 
 @register.filter(name='shuffle')
 def shuff(a):
-	return shuffle(list(a)) if a else []
+	if a:
+		b = list(a)
+		shuffle(b)
+		return b
+	return []
