@@ -39,12 +39,6 @@ workon network_lab
 
 then, in your browser, go to localhost:8000
 
-### Posting data
-We're using a sqlite database for dev so if you want to insert any data, please go to localhost:8000/admin
-
-| username |   password   |
-|----------|--------------|
-| lascilab | lascilab2015 |
 
 ### Modifying templates
 If you're not familiar with django template system, take a look  [here](https://docs.djangoproject.com/en/1.8/topics/templates/)
