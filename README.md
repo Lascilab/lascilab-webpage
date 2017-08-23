@@ -21,7 +21,7 @@ Assuming you're on debian like OS
 
 ```bash
 sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install python-dev python-pip
+sudo apt-get install python-dev python-pip libpq-dev
 sudo pip install virtualenv virtualenvwrapper requests[security]
 
 source /usr/local/bin/virtualenvwrapper.sh
@@ -32,7 +32,8 @@ now, go to project folder and then run
 
 ```bash
 cd webpage
-pip install -r requirements-dev.txt
+pip install -r requirements.txt
+source /usr/local/bin/virtualenvwrapper.sh
 workon network_lab
 ./manage.py runserver
 ```
@@ -56,8 +57,15 @@ If you're not familiar with django model system, take a look
 
 If you want to make changes to models, and reflex in database, please do
 ```
-./manage.py makemigrations appname
-./manage.py migrate
+rm db.sqlite3
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### Loading data
+
+```
+./manage.py loaddata db2.json
 ```
 
 Enjoy Coding!

@@ -127,7 +127,7 @@
         <div class="container" data-animation="true" data-animation-type="fadeInUp">
             <h2 class="content-title">Team</h2>
             <!-- begin carousel -->
-            <div class="carousel testimonials slide" data-ride="carousel" id="testimonials">
+            <div class="carousel testimonials slide" data-ride="carousel" id="testimonials2">
                 <!-- begin carousel-inner -->
                 <div class="carousel-inner text-center">
                     {% for paired in paired_members %}
@@ -186,9 +186,9 @@
                 <ol class="carousel-indicators">
                     {% for paired in paired_members %}
                     {% if forloop.first %}
-                    <li data-target="#testimonials" data-slide-to="0" class="active"></li>
+                    <li data-target="#testimonials2" data-slide-to="0" class="active"></li>
                     {% else %}
-                    <li data-target="#testimonials" data-slide-to="{{ forloop.counter0 }}" class=""></li>
+                    <li data-target="#testimonials2" data-slide-to="{{ forloop.counter0 }}"></li>
                     {% endif %}
                     {% endfor %}
                 </ol>

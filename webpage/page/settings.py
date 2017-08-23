@@ -92,39 +92,28 @@ WSGI_APPLICATION = 'page.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-# SQLITE = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+SQLITE = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
-# try:
-#     POSTGRES = {
-#             'default': {
-#                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#                 'NAME': os.environ['DB_NAME'],
-#                 'USER': os.environ['DB_USER'],
-#                 'PASSWORD': os.environ['DB_PASS'],
-#                 'HOST': os.environ['DB_SERVICE'],
-#                 'PORT': os.environ['DB_PORT']
-#             }
-#         }
-# except KeyError:
-#     POSTGRES = None
-    
-# DATABASES = POSTGRES if PRODUCTION else SQLITE
-
-DATABASES =  {
+try:
+    POSTGRES = {
             'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                'NAME': 'lascilab',
-                'USER': 'lascilab',
-                'PASSWORD': 'lascilab',
-                'HOST': '172.18.02',
-                'PORT': '5432'
+                'NAME': os.environ['DB_NAME'],
+                'USER': os.environ['DB_USER'],
+                'PASSWORD': os.environ['DB_PASS'],
+                'HOST': os.environ['DB_SERVICE'],
+                'PORT': os.environ['DB_PORT']
             }
         }
+except KeyError:
+    POSTGRES = None
+    
+DATABASES = SQLITE #POSTGRES if PRODUCTION else SQLITE
 
 
 # Password validation
