@@ -1,0 +1,392 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Lascilab</title>
+  <link href="{% static 'univalle/images/header/lascilab.png' %}" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
+
+  <!-- Univalle CSS -->
+  <link rel="stylesheet" href="{% static 'univalle/css/univalle.css' %}">
+
+  <!-- Offcanvas CSS -->
+  <link rel="stylesheet" href="{% static 'plugins/offcanvas/css/offcanvas.css' %}">
+
+  {% block custom-css %}
+  {% endblock %}
+
+  <!-- JQuery  JavaScript -->
+  <script type="text/javascript" src="{% static 'plugins/jquery-3.1.0/jquery-3.1.0.min.js' %}"></script>
+
+  <!-- Bootstrap  JavaScript -->
+  <script type="text/javascript" src="{% static 'plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+
+  <!-- Offcanvas JavaScript -->
+  <script type="text/javascript" src="{% static 'plugins/offcanvas/js/offcanvas.js' %}"></script>
+
+  {% block custom-top-js %}
+  {% endblock %}
+
+  <!--Responsive meta tag
+  Bootstrap is developed mobile first, a strategy in which we optimize code for mobile devices 
+  first and then scale up components as necessary using CSS media queries. To ensure proper 
+  rendering and touch zooming for all devices, add the responsive viewport meta -->  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Describes metadata within an HTML document -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta property="og:url" content="http://www.univalle.edu.co/" />
+  <meta property="og:title" content="Universidad del Valle / Cali, Colombia" />
+  <meta property="og:type" content="website" />
+  <meta name="description" content="Univalle Sitio Web" />
+
+
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="row uv-header">
+        <div class="col-md-6">
+          <img src="{% static 'univalle/images/header/univalle-logo.jpg' %}" style="width: 100%;" class="img-fluid" alt="OSSO">
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12 uv-header-links">
+              <ul>
+                <li><a href="http://atencionalciudadano.univalle.edu.co/atencionCiudadanoInformacionPublica.html" target="_blank">Atención ciudadanía</a></li>
+                <li><a href="http://portaldeninos.univalle.edu.co/" target="_blank">Portal Infantil</a></li>
+                <li><a href="/directorio-univalle" target="_blank">Directorio</a></li>
+                <li><a href="/index.php/correo-electronico-institucional" target="_blank">Correo</a></li>
+                <li><a href="http://biblioteca.univalle.edu.co/" target="_blank">Biblioteca</a></li>
+                <li><a href="/index.php/mapa-del-sitio">Mapa del sitio</a></li>
+                <li><a href="/english/index.html" target="_blank">English version</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row" style="padding-top: 20px;">
+            <div class="col-md-6">
+              <!-- empty col -->
+            </div>
+
+            <div class="col-lg-6">
+              <form action="http://www.univalle.edu.co/busqueda" method="get" accept-charset="utf-8">
+                <div class="input-group uv-header-search">
+                  <input type="text" name="gsquery" class="form-control" placeholder="Buscar">
+                  <span class="input-group-btn">
+                    <button type="submit" style="background: url( {% static 'univalle/images/header/searchButton.gif' %}) center center no-repeat;"></button>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar uv-navbar">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle btn uv-btn-colapse" data-toggle="collapse" data-target="#myNavbar">
+          <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul>
+          <li><a href="">Inicio</a></li>
+          <li><a href="">La Universidad</a></li>
+          <li><a href="" >Estudia en Univalle</a></li>
+          <li><a href="">Sedes Regionales</a></li>
+          <li><a href="">Invetigación</a></li>
+          <li><a href="">Internacionalización</a></li>
+          <li><a href="">Publicaciones</a></li>
+        </ul>
+      </div>    
+    </nav>    
+  </header><!-- /header -->
+
+  <div class="container-fluid" style="min-height:1200px !important;">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+      <!-- univalle sidebar -->
+      <nav class="col-md-3 sidebar-offcanvas" id="sidebar">
+
+        <!-- menu -->
+        <div class="uv-sidebar">
+          <h3>The laboratory</h3>
+          <ul>
+            <li><a style="background: url({% static 'univalle/images/bullet-sidebar.png' %}) 10px center no-repeat !important;" href="{% url 'index:home' %}" title="">Home</a></li>
+            <li><a style="background: url({% static 'univalle/images/bullet-sidebar.png' %}) 10px center no-repeat !important;" href="{% url 'index:history' %}" title="">History</a></li>
+            <li><a style="background: url({% static 'univalle/images/bullet-sidebar.png' %}) 10px center no-repeat !important;" href="{% url 'person:members' %}" title="">Members</a></li>
+            <!-- <li><a style="background: url({% static 'univalle/images/bullet-sidebar.png' %}) 10px center no-repeat !important;" href="" title="">Conferences / Papers</a></li> -->
+            <!-- <li><a style="background: url({% static 'univalle/images/bullet-sidebar.png' %}) 10px center no-repeat !important;" href="" title="">Projects</a></li> -->
+          </ul>
+          <p>&nbsp;</p>
+          <h3>Events</h3>
+          <ul>
+            <li><a style="background: url({% static 'univalle/images/bullet-sidebar.png' %}) 10px center no-repeat !important;" href="{% url 'event:seminars' %}" title="">Seminars</a></li>
+          </ul>
+          <p>&nbsp;</p>
+          <h3>Infrastructure</h3>
+          <h4>Cluster</h4>
+          <ul>
+            <!-- <li><a style="background: url({% static 'univalle/images/bullet-sidebar.png' %}) 10px center no-repeat !important;" href="" title="">Details</a></li> -->
+            <li><a style="background: url({% static 'univalle/images/bullet-sidebar.png' %}) 10px center no-repeat !important;" href="http://lascilab.univalle.edu.co/wiki/" title="">Wiki</a></li>
+          </ul>
+          <p>&nbsp;</p>
+<!--           <h4>NVIDIA Jetson TK1</h4>
+          <h4>Intel Galieo</h4> -->
+
+          <p>&nbsp;</p>
+          <h3>Users</h3>
+          <h4>
+          {% if user.is_authenticated %} 
+            Opciones de {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}
+          {% endif %}
+          </h4>
+          <ul>
+            {% if user.is_authenticated %}
+            <li><a style="background: url({% static 'univalle/images/bullet-sidebar.png' %}) 10px center no-repeat !important;" href="{% url 'admin:index' %}">Account</a></li>
+            <li><a style="background: url({% static 'univalle/images/bullet-sidebar.png' %}) 10px center no-repeat !important;" href="{% url 'admin:logout' %}">Log out</a></li>
+            {% else %}
+            <li><a style="background: url({% static 'univalle/images/bullet-sidebar.png' %}) 10px center no-repeat !important;" href="{% url 'admin:login' %}">Log in</a></li>
+            {% endif %}
+          </ul>
+        </div>
+        <!-- menu -->
+
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <!-- info -->
+        <div class="row uv-sidebar-info">
+          <div class="col-md-12 uv-sidebar-info-header">
+            <p>Información</p>
+          </div>
+          <!-- Force next columns to break to new line -->
+          <!-- <div class="w-100"></div> -->
+          <div class="col-md-12 uv-sidebar-info-body">
+            <ul>
+              <li>Escuela de Ingeniería de Sistemas y Computación</li>
+              <!-- <li>laboratorio.redesysd@correounivalle.edu.co </li> -->
+              <li>Edif. 331, espacio 2072</li>
+              <li>Ciudad Universitaria, Meléndez</li>
+              <li>Cali, Valle del Cauca, Colombia</li>
+              <li>Universidad Del Valle</li>
+            </ul>
+          </div>
+        </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <!-- info -->
+      </nav>
+      <!-- univalle sidebar -->
+
+      <!-- Main: specifies the main content of the document -->
+      <main class="col-md-8">
+        <p class="visible-xs uv-float-btn">
+          <button type="button" class="btn btn-primary uv-btn " data-toggle="offcanvas">
+            <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+          </button>
+        </p>
+        {% block sections %}
+        <section class="uv-section">
+          <h1>What is Lorem Ipsum?</h1>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <h2>Where does it come from?</h2>
+          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+          <h3>Why do we use it?</h3>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+        </section>
+        <div class="uv-divider-big"></div>
+        <section class="uv-section">
+          <h1>What is Lorem Ipsum?</h1>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <div class="uv-divider-medium"></div>
+          <h2>Where does it come from?</h2>
+          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+          <div class="uv-divider-small"></div>
+          <h3>Why do we use it?</h3>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+        </section>
+        {% endblock %}
+      </main>
+      <!-- Main: specifies the main content of the document -->
+
+    </div>
+
+  </div>
+
+
+  <!-- 
+    "Some scripts require the DOM to be loaded, e.g. they operate on some HTML elements, i.e. 
+    they use document.getElementById or $("selector"). In those cases the HTML elements are 
+    required by the script, so those elements need to be above the JavaScript that requires them, 
+    or in other words, the JavaScript that requires some HTML elements needs to be placed below those." 
+  -->
+  {% block custom-bottom-js %}
+  {% endblock %}
+
+  <footer class="row footer">
+    <!-- univalle footer -->
+    <div class="uv-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <!-- width="112" height="159" -->
+            <img src="{% static 'univalle/images/footer/logo.png' %}" style="width: 60%;" class="img-fluid" alt="OSSO">
+          </div>
+          <div class="col-md-3">
+            <h5>UNIVERSIDAD DEL VALLE</h5>
+            <ul>
+              <li>Cali - Colombia</li>
+              <li>© 1994 - 2017</li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5>Dirección:</h5>
+            <ul>
+              <li>Ciudad Universitaria Meléndez</li>  
+              <li>Calle 13 # 100-00</li>
+              <li>&nbsp;</li>
+              <li>Sede San Fernando</li>
+              <li>Calle 4B N° 36-00</li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5>PBX:</h5>
+            <ul>                                
+              <li>+57 2 3212100</li>
+              <li>A.A.25360</li>
+            </ul>
+          </div>
+          <div class="col-md-2 uv-footer-social">
+            <h5>Redes Sociales:</h5>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="https://www.facebook.com/universidaddelvalle" target="_blank">
+                  <img src="{% static 'univalle/images/footer/facebook.png' %}" class="img-fluid" alt="Facebook">
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="https://www.youtube.com/user/universidaddelvalle1" target="_blank">
+                  <img src="{% static 'univalle/images/footer/youtube.png' %}" class="img-fluid" alt="Youtube">
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="https://twitter.com/univallecol" target="_blank">
+                  <img src="{% static 'univalle/images/footer/twitter.png' %}" class="img-fluid" alt="Twitter">
+                </a>
+              </div>           
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- univalle footer -->
+
+    <!-- univalle footer links -->
+    <div class="uv-footer-links">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <h5>La Universidad</h5>
+            <ul>
+                <li><a href="http://www.univalle.edu.co/la-universidad/consejo-superior">Consejo Superior</a></li>
+                <li><a href="http://www.univalle.edu.co/la-universidad/consejo-academico">Consejo Académico</a></li>
+                <li><a href="http://www.univalle.edu.co/la-universidad/rectoria">Rectoría</a></li>
+                <li><a href="http://www.univalle.edu.co/la-universidad/nuestros-simbolos/himno-univalle">Nuestros Símbolos</a></li>
+                <li><a href="http://www.univalle.edu.co/la-universidad/acerca-de-univalle/mision">Acerca de Univalle</a></li>
+                <li><a href="http://www.univalle.edu.co/la-universidad/dependencias/vicerrectorias">Dependencias</a></li>
+                <li><a href="http://museoarqueologico.univalle.edu.co/museo.html" target="_blank">Museos y Colecciones</a></li>
+                <li><a href="https://www.facebook.com/universidaddelvalle/photos_stream?tab=photos_albums" target="new">Fotos de la Universidad</a></li>
+                <li><a href="http://www.univalle.edu.co/mapas/index.html" target="_blank">Mapa del Campus</a></li>
+                <li><a href="http://www.univalle.edu.co/la-universidad/tour-por-la-universidad">Tour por la Universidad</a></li>
+                <li><a href="http://daca.univalle.edu.co/normatividad.html">Normatividad</a></li>
+                <li><a href="http://planeacion.univalle.edu.co/plandesarrollo/versiones/7_ProyectoInstitucional.pdf">Proyecto institucional</a></li>
+                <li><a href="http://www.univalle.edu.co/la-universidad/horarios-de-atencion">Horarios de atención</a></li>
+            </ul>   
+          </div>
+          <div class="col-md-2">
+            <h5>Estudia en Univalle</h5>
+            <ul>
+                <li><a href="http://www.univalle.edu.co/formacion/pregrado">Pregrado</a></li>
+                <li><a href="http://www.univalle.edu.co/formacion/postgrado">Postgrado</a></li>
+                <li><a href="http://www.univalle.edu.co/formacion/diplomados">Diplomados</a></li>
+                <li><a href="http://www.univalle.edu.co/formacion/cursos-y-talleres">Cursos y Talleres</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5>Sedes Regionales</h5>
+            <ul>
+                <li><a href="http://tulua.univalle.edu.co/" target="_blank">Tuluá</a></li>
+                <li><a href="http://buga.univalle.edu.co/" target="_blank">Buga</a></li>
+                <li><a href="http://caicedonia.univalle.edu.co/" target="_blank">Caicedonia</a></li>
+                <li><a href="http://cartago.univalle.edu.co/" target="_blank">Cartago</a></li>
+                <li><a href="http://nortedelcauca.univalle.edu.co/" target="_blank">Norte del Cauca</a></li>
+                <li><a href="http://pacifico.univalle.edu.co/" target="_blank">Pacífico</a></li>
+                <li><a href="http://palmira.univalle.edu.co/">Palmira</a></li>
+                <li><a href="http://yumbo.univalle.edu.co/" target="_blank">Yumbo</a></li>
+                <li><a href="http://zarzal.univalle.edu.co/WebNueva/index.html" target="_blank">Zarzal</a></li>
+                <li><a href="http://regionalizacion.univalle.edu.co/" target="_blank">Regionalización</a></li>
+            </ul>            
+          </div>
+          <div class="col-md-2">
+            <h5>Investigación</h5>
+            <ul>
+                <li><a href="http://viceinvestigaciones.univalle.edu.co/acerca-de-la-vicerrectoria-de-investigacion">Acerca de la Vicerrectoría de investigaciones</a></li>
+                <li><a href="http://viceinvestigaciones.univalle.edu.co/institutos-centros-y-grupos">Institutos, Centros y Grupos</a></li>
+                <li><a href="http://viceinvestigaciones.univalle.edu.co/convocatorias">Convocatorias</a></li>
+                <li><a href="http://viceinvestigaciones.univalle.edu.co/universidad-empresa-otri">Universidad - Empresa (OTRI)</a></li>
+                <li><a href="http://viceinvestigaciones.univalle.edu.co/becas">Becas</a></li>
+                <li><a href="http://viceinvestigaciones.univalle.edu.co/gestion-de-la-investigacion-y-formacion">Gestión de la investigación y formación</a></li>
+                <li><a href="http://ori.univalle.edu.co/">Dirección de Relaciones Internacionales</a></li>
+                <li><a href="http://programaeditorial.univalle.edu.co/">Programa Editorial</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5>Internacionalización</h5>
+            <ul>
+                <li><a href="http://dri.univalle.edu.co/index.php/convocatorias">Convocatorias</a></li>
+              <li><a href="http://dri.univalle.edu.co/index.php/estudia-en-univalle">Estudia en Univalle</a></li>
+              <li><a href="http://dri.univalle.edu.co/index.php/estudia-en-el-exterior">Estudia en el exterior</a></li>
+              <li><a href="http://dri.univalle.edu.co/index.php/conveniosinternacionales">Convenios Internacionales</a></li>
+              <li><a href="http://dri.univalle.edu.co/index.php/investiga-en-univalle" target="_blank">Investiga en Univalle</a></li>
+              <li><a href="http://dri.univalle.edu.co/index.php/solicitudes-tramites" target="_blank">Solicitudes / Trámites</a></li>
+              <li><a href="http://dri.univalle.edu.co/index.php/about-univalle" target="_blank">About Univalle</a></li>
+              <li><a href="http://dri.univalle.edu.co/index.php/contactos" target="_blank">Contactos</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5>Publicaciones</h5>
+            <ul>
+                <li><a href="http://programaeditorial.univalle.edu.co/" target="_blank">Libros</a></li>
+                <li><a href="http://www.univalle.edu.co/2014-03-31-13-55-29/periodico-campus" target="_blank">Periódico Campus</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- univalle footer links -->
+
+    <!-- univalle footer copyright -->
+    <div class="uv-footer-copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <!-- empty col -->
+          </div>
+          <div class="col-md-4">
+            <p>2017 <a href="http://www.univalle.edu.co/" target="_blank">Universidad del Valle</a> - Vigilada MinEducación</p>
+          </div>
+          <div class="col-md-4">
+            <!-- empty col -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- univalle footer copyright -->
+  </footer>
+
+</body>
+</html>

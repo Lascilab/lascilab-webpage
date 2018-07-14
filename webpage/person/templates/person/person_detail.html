@@ -1,0 +1,97 @@
+{% extends 'uv/base.html' %}
+{# Tor perform text translations #}
+{% load i18n %}
+
+{% load static %}
+
+{% block custom-css %}
+{% endblock %}
+
+{% block custom-top-js %}
+{% endblock %}
+
+{% block sections %}
+
+<section class="col-lg-12 uv-section">
+  {# To display messages #}
+  {% include 'includes/messages.html' %}
+
+  <h1>General Information</h1>
+  <div class="uv-divider-small"></div>
+  
+  <div class="row ">
+    <div class="col-md-6">
+      <div class="img-responsive uv-lab-members">
+        {% if object.picture %}
+        <img src="{{ object.picture.url }}" width="200px" height="300" class="img-circle" >
+        {% else %}
+        <img src="/media/img/people/no_image.jpg" width="200px" height="300" class="img-circle">
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-md-6">
+
+      {% if object.name %}
+      <h4>Name</h4>
+      <p>{{ object.name }}</p>
+      {% endif %}
+
+      {% if object.interest %}
+      <h4>Area</h4>
+      <p>{{ object.interest }}</p>
+      {% endif %}
+
+      {% if object.description %}
+      <h4>Description</h4>
+      <p>{{ object.description }}</p>
+      {% endif %}
+
+      {% if object.status %}
+      <h4>Status</h4>
+      <p>{{ object.status }}</p>
+      {% endif %}
+      
+      {% if object.email %}
+      <h4>Email</h4>
+      <p>{{ object.email }}</p>
+      {% endif %}
+
+      {% if object.affiliation %}
+      <h4>Affiliation</h4>
+      <p>{{ object.affiliation }}</p>
+      {% endif %}
+
+      {% if object.laboratory %}
+      <h4>Laboratory</h4>
+      <p>{{ object.laboratory }}</p>
+      {% endif %}
+      
+    </div>
+  </div>
+</section>
+
+<section class="col-lg-12 uv-section">
+  {# To display messages #}
+  {% include 'includes/messages.html' %}
+
+</section>
+
+{% if object.contribution_set.all %}
+<section class="col-lg-12 uv-section">
+  {# To display messages #}
+  {% include 'includes/messages.html' %}
+
+  <h1>Contributions</h1>
+  <div class="uv-divider-small"></div>
+  {% for contribution in object.contribution_set.all %}
+  <h4>{{ contribution.title }} - {{ contribution.ctype }}</h4>
+  <p>{{ contribution.abstract }}</p>
+
+  {% endfor %}
+</section>
+{% endif %}
+
+{% endblock %}
+
+{% block custom-bottom-js %}
+{% endblock %}

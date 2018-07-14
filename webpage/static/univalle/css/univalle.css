@@ -1,0 +1,357 @@
+
+/*-- Univalle Main Red Navbar --*/
+.uv-navbar {
+  border: none;
+  border-radius: 0;
+  text-align: center;
+  background: rgba(235,30, 0, 1);
+}
+
+/*-- To align the carouse with the Navbar --*/
+/*-- To move down the menu --*/
+.uv-navbar-carousel {
+  margin-bottom: 0px;
+}
+
+/* To separe the left menu bar form the carousel */
+.uv-carousel {
+  margin-bottom: 20px;
+}
+
+.uv-navbar ul {
+  list-style: none;
+  margin: 10px 0;
+  
+}
+
+.uv-navbar  ul  li {
+  display: inline; /* To display li items horizontally */
+  padding: 10px; /* To separe li items */
+  border-right: 1px solid #fff;
+}
+
+/* Add a left border just to the first li item in the ul */
+.uv-navbar  ul  li:first-child {
+  border-left: 1px solid #fff;
+}
+
+.uv-navbar  ul  li  a {
+  color: white;
+  font-size: 19px;
+}
+
+.uv-red {
+  background: rgba(235,30, 0, 1);
+}
+
+.uv-btn-colapse {
+  color: rgba(255,255, 255, 1);
+  border: 1px solid rgba(255,255, 255, 1);
+}
+
+
+/*-- Univalle Header Silver Navbar --*/
+
+.uv-header {
+  padding: 10px;
+}
+.uv-header-links {
+  background: #808285;
+
+}
+
+.uv-header-links ul {
+  padding: 2px;
+  margin-top: 5px;
+}
+
+.uv-header-links ul li {
+  display: inline; /* To display li items horizontally */
+  /*padding: 1px;  To separe li items */
+}
+
+.uv-header-links ul li a {
+  color: #ffffff; /*Links color white */
+  font-size: 13px;
+
+}
+
+/*-- Univalle Header Google Search */
+.uv-header-search input[type="text"] {
+  background: #E2E3E4;
+  border: none;
+  height: 32px;
+  padding: 0 10px;
+}
+
+/*  .uv-header-search input[type="submit"] {
+  border: none;
+  border-radius: 0;
+  display: inline-block;
+  font-size: 0;
+  height: 32px;
+  width: 51px;
+}
+*/
+.uv-header-search button[type="submit"] {
+  border: none;
+  border-radius: 0;
+  display: inline-block;
+  font-size: 0;
+  height: 32px;
+  width: 51px;
+}
+
+/*-- Univalle Footer */
+
+.uv-footer {
+  background: #D51B23;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  text-align: left;
+
+}
+
+.uv-footer h5 {
+  color: white;
+  font-weight:bold;
+}
+
+.uv-footer ul {
+  list-style: none; /* To remove the bullets */
+  padding-left:0;   /* To unindent the li items */
+
+}
+
+.uv-footer li {
+  color: white;
+
+}
+
+.uv-footer-social {
+  border-left: 1px solid #fff; /* To add a left line in the social div */
+  padding-bottom: 60px; /* To increse the padding, for instance the line */
+
+}
+
+/*-- Univalle Footer Links */
+
+.uv-footer-links {
+  font-size: 13px;
+  background: rgb(88, 89, 91);
+}
+
+.uv-footer-links ul {
+  list-style: none; /* To remove the bullets */
+  padding-left:0;   /* To unindent the li items */
+}
+
+.uv-footer-links a {
+  color: white;
+}
+
+.uv-footer-links h5 {
+  color: rgb(251, 176, 64);
+  font-size: 17px;
+  font-weight: 200;
+}
+
+/*-- Unvalle Footer Copyright --*/
+.uv-footer-copyright {
+  font-size: 13px;
+  background: rgb(48, 48, 48);
+}
+
+.uv-footer-copyright p {
+  color: white;
+}
+
+.uv-footer-copyright a {
+  color: rgb(251, 176, 64);
+}
+
+/*-- Unvalle Sidebar --*/
+.uv-sidebar h3 {
+  color: #FFF;
+  padding: 7px;
+  background-color: #E81C25;
+  width: 100%; 
+  margin-top: 0;
+  font-size: 19px;
+}
+
+.uv-sidebar h4 {
+  color: #e71c24;
+  font-size: 12pt;
+}
+
+.uv-sidebar ul {
+  list-style: none; /* To remove the bullets */
+  padding-left:0;   /* To unindent the li items */
+  font-size: 0;     /* To add space between li items */
+}
+
+.uv-sidebar ul li {
+  padding-top: 8px;  /* To add space between li items */
+}
+
+
+.uv-sidebar ul li a {
+  color: #6D6E71 !important;
+  font-size: 15px;
+  font-weight: 200;
+  padding: 5px 0 5px 35px !important;
+  text-decoration: none;    /* To remove underline */
+}
+
+/*-- Unvalle Sidebar Info --*/
+.uv-sidebar-info {
+  padding-left: 15px;
+}
+
+.uv-sidebar-info-header {
+  background-color: #808285;    /* Background color */
+  color: #FFF;    /* Font color */
+  font-size: 18px;
+  padding-top: 7px;
+  width: 100s%; 
+}
+
+.uv-sidebar-info-body {
+  color: #D51B23;
+  background-color: #F3F3F3;
+  width: 100%;
+}
+
+.uv-sidebar-info ul {
+  list-style: none; /* To remove the bullets */
+  padding: 10px;  /* To unindent the li items */
+}
+
+/* Univalle section content */
+.uv-section {
+  padding-bottom: 20px;
+}
+
+.uv-section h1 {
+  color: #e81c25;
+}
+
+.uv-section h2 {
+  color: #e81c25;
+}
+
+.uv-section h3 {
+  color: #999999;
+}
+
+.uv-section p {
+  color: #6D6E71;
+  text-align: justify;
+}
+
+.uv-divider-small {
+  border-bottom: 1px solid #E71B24;
+  margin-bottom: 30px;
+}
+
+.uv-divider-medium {
+  border-bottom: 2px solid #E71B24;
+  margin-bottom: 30px;
+}
+
+.uv-divider-big {
+  border-bottom: 4px solid #E71B24;
+  margin-bottom: 30px;
+}
+
+/* Univalle components */
+
+.uv-btn {
+  background-color: rgba(235,30, 0, 1);
+  color: white;
+  border: none;
+}
+
+.uv-btn.focus, .uv-btn:focus, .uv-btn:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #CC2525;
+  border-color: #ED2626;
+}
+
+/* for s container of links */
+.uv-red-links a {
+  color: rgba(235,30, 0, 1);
+}
+
+/* for a single link */
+.uv-red-link {
+  color: rgba(235,30, 0, 1);
+}
+
+.uv-float-btn {
+  position: fixed;
+  z-index: 998;
+  right: 35px;
+  bottom: 35px;
+  margin-bottom: 0;
+  padding-top: 15px;
+}
+
+.uv-float-btn button {
+  border-radius: 50%; 
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+}
+
+.uv-loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #d93434; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* images */
+
+div.uv-lab-members {
+  padding-bottom: 80px;
+  /*margin-bottom:25px;*/
+}
+
+div.uv-lab-members img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+  margin-bottom:10px; 
+}
+
+div.uv-lab-members img:hover {
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+} 
+
+.uv-image {
+  padding-bottom: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+  margin-bottom:10px; 
+}
+
+.uv-image :hover {
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}

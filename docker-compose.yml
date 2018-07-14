@@ -4,7 +4,7 @@
    postgres:
      restart: always # restart db service if it crashes
      image: postgres
-     env_file: containers_environment_variables
+     env_file: env
      expose:
        - "5432"
 
@@ -29,7 +29,7 @@
        - "8000"
      links:
        - postgres:postgres
-     env_file: containers_environment_variables
+     env_file: env
  
    nginx:
      build : ./nginx/

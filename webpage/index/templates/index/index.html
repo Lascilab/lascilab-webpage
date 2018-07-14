@@ -1,0 +1,71 @@
+{% extends 'uv/base.html' %}
+{# Tor perform text translations #}
+{% load i18n %}
+
+{% load static %}
+
+{% block custom-css %}
+{% endblock %}
+
+{% block custom-top-js %}
+{% endblock %}
+
+{% block sections %}
+
+<section class="col-lg-12 uv-section">
+  {# To display messages #}
+  {% include 'includes/messages.html' %}
+
+  <h1>{% trans "Networks and Distribute Systems Laboratory" %}</h1>
+  <div class="uv-divider-small"></div>
+  <img src="{% static 'univalle/images/lascilab-logo.png' %}" class="img-responsive" style="margin: 0 auto">
+  <p>
+    Laboratory dedicated to teaching and research, used as testing environment for the courses of operating systems, networks and distributed systems. In this space, students have the possibility to explore different distributed computing technologies through virtual computing environments.
+  </p>
+</section>
+
+<section class="col-lg-12 uv-section">
+  {# To display messages #}
+  {% include 'includes/messages.html' %}
+
+  <h2>{% trans "Activities" %}</h2>
+  <!-- <div class="uv-divider-small"></div> -->
+  <ul>
+    <li> Undergraduate and graduate students carry out practices related to courses and projects in the area of networks and distributed systems. </ li>
+    <li> Exploration of different technologies of parallel and distributed computing as well as technologies for the provisioning of these platforms in both physical and virtual environments. </li>
+    <li> Provisioning tools: Vagrant and Ansible. </ li>
+    <li> Passage of Messages: MPI. </ li>
+    <li> Map and Reduce: Hadoop. </ li>
+    <li> Grid Computing: Globus Toolkit and HTCondor. </ li>
+    <li> Cloud Computing: OpenStack, OpenNebula. </ li>
+  </ul>
+</section>
+
+<section class="col-lg-12 uv-section">
+  {# To display messages #}
+  {% include 'includes/messages.html' %}
+
+  <h2>{% trans "Coordinator" %}</h2>
+  <!-- <div class="uv-divider-small"></div> -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="img-responsive">
+      <img src="{% static 'univalle/images/john-sanabria.png' %}" style="max-width: 100%; height: auto">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <p>
+        <a href="http://eisc.univalle.edu.co/index.php/la-escuela/profesores/john-alexander-sanabria-ordonez">
+        Ph.D. John Alexander Sanabria Ordoñez
+        </a><br>
+        <strong>E-mail:</strong> laboratorio.redesysd@correounivalle.edu.co <br>
+        <strong>Telephone:</strong> (57) (2) 331 21 00 Ext. 2797
+      </p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block custom-bottom-js %}
+{% endblock %}

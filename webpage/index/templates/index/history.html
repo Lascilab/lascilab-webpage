@@ -1,0 +1,84 @@
+{% extends 'uv/base.html' %}
+{# Tor perform text translations #}
+{% load i18n %}
+
+{% load static %}
+
+{% block custom-css %}
+{% endblock %}
+
+{% block custom-top-js %}
+{% endblock %}
+
+{% block sections %}
+
+<section class="col-lg-12 uv-section">
+  {# To display messages #}
+  {% include 'includes/messages.html' %}
+
+  <h1>{% trans "Our Story" %}</h1>
+  <div class="uv-divider-small"></div>
+  <p>
+    <strong>Lascilab</strong>, a.k.a., Networks and Distributed Systems Laboratory at Universidad del Valle was created to be a space that make easy the practice and experimentation related with large scale computer infraestructures. In mid-2015, with the goal of supporting research and software development processes, this laboratory make available to the educational community the services of the Univalle's Computational Cluster.
+
+    The Networks and Distribute System Laboratory is in addition a space dedicated to teaching and research for courses like Operative Systems, Networks and Distributed Systems. 
+  </p>
+
+  <p>
+    lascilab is a laboratory attached to the School of Systems Engineering and Computing (EISC) in the Faculty of Engineering at Universidad del Valle. lascilab is derived from the English term <strong>La</strong>rge <strong>Sc</strong>ale <strong>I</strong>nfrastructure <strong>Lab</strong>oratory, since the objective of the laboratory is to work in terms related to large scale distributed computing infrastructures.
+  </p>
+
+  <p>
+    This is how in this laboratory knowledge is developed in areas related to operating systems, virtualization tools, service orchestration and computational platforms: HTC (high throughput computing) and HPC (high performance computing).
+
+    Given that the term <q>lascilab</q> may sound complex and too remote from the work of computer scientists, within the EISC it is also known as the <em>Networks and Distribute Systems Laboratory.</em>
+  </p>
+
+  <p>
+    The laboratory is under the direction of Professor John Sanabria who has the support of undergraduate and graduate students.
+  </p>
+  
+</section>
+
+<section class="col-lg-12 uv-section">
+  {# To display messages #}
+  {% include 'includes/messages.html' %}
+
+  <h1>{% trans "Logos" %}</h1>
+  <div class="uv-divider-small"></div>
+
+  <!-- Left-aligned -->
+  <div class="media">
+    <div class="media-left">
+      <img src="{% static 'univalle/images/lascilab1.png' %}" class="media-object" style="width:100px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Designer. Edier Zapata</h4>
+      <p>This design tries to gather in a cloud the computational tools (htcondor, openmp, docker, ansible, virtualbox, among other.) object of investigation in the laboratory.</p>
+    </div>
+  </div>
+  <!-- Left-aligned -->
+  <div class="media">
+    <div class="media-left">
+      <img src="{% static 'univalle/images/lascilab2.png' %}" class="media-object" style="width:100px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Designer. Erick Garcia</h4>
+      <p>Design inspired by the computational power available in multi and many -core computers, the versatility of containers to deploy large-scale software and their interaction in a computational cluster.</p>
+    </div>
+  </div>
+  <!-- Left-aligned -->
+  <div class="media">
+    <div class="media-left">
+      <img src="{% static 'univalle/images/lascilab-logo.png' %}" class="media-object" style="width:100px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Designer. Daniel Montaño</h4>
+      <p>"The identifier has a minimalist style and consists of a symbol that represents the ability of a whole team to generate high performance in different computing processes. It is conceptualized in the agility that the group has to do its work. It also reflects freshness and confidence. This imagotype can be easily applied in different supports."</p>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block custom-bottom-js %}
+{% endblock %}
