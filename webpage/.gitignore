@@ -1,5 +1,6 @@
 .env/
 *.pyc
 migrations/!__init__.py
+migrations/*
 __pycache__/
 db.sqlite3
