@@ -3,3 +3,5 @@
 **/migrations/[0-9]*_*
 __pycache__/
 db.sqlite3
+/static/admin/
+/media
