@@ -4,7 +4,7 @@
 <img src="https://avatars2.githubusercontent.com/u/20485166?v=3&s=200" width="150"/> 
 </p>
 
-This is the source code of the "Laboratorio de redes y sistemas distribuidos" webpage, it was wrote using python2.7+.
+This is the source code of the "Lascilab" webpage, it was wrote using python3.6+.
 
 ## For deploy in production
 Install Docker and Docker Compose.
