@@ -7,6 +7,17 @@
 This is the source code of the "Lascilab" webpage, it was wrote using python3.6+.
 
 ## For deploy in production
+
+### Removing older version instances
+
+locate in the *webpage* directory and perform the following commad.
+
+```bash
+docker-compose down --volumes --rmi all --remove-orphans
+```
+
+### Deploying new version
+
 Install Docker and Docker Compose.
 
 ```bash
@@ -76,6 +87,8 @@ apply migrations changes into the database.
 ```bash
 ./manage.py migrate
 ```
+
+### Running the development server
 
 to run the development server.
 
