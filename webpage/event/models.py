@@ -93,4 +93,7 @@ class Seminar(models.Model):
         return self.name
 
     def is_application_open(self):
-        return date.today() >= self.application_opening and date.today() < self.application_deadline 
+        return date.today() >= self.application_opening and date.today() < self.application_deadline
+
+    class Meta:
+        ordering = ['-start_date']

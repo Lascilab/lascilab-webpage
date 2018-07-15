@@ -6,6 +6,8 @@ from django.views.generic.detail import DetailView
 
 from person.models import Person
 
+import random
+
 class PersonList(ListView):
 
     model = Person
@@ -16,6 +18,11 @@ class PersonList(ListView):
         context['are_there_students'] = self.get_queryset().exclude(status='Associated').exclude(status='Graduated').count()
         context['are_there_associated'] = self.get_queryset().filter(status='Associated').count()
         context['are_there_graduated'] = self.get_queryset().filter(status='Graduated').count()
+
+        person_list = list(context['person_list'])
+        random.shuffle(person_list)
+        context['person_list'] = person_list
+
         return context
 
 

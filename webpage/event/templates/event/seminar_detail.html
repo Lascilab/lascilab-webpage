@@ -16,9 +16,11 @@
   {# To display messages #}
   {% include 'includes/messages.html' %}
 
+  {% if object.banner %}
   <div class="img-responsive">
   	<img src="{{ object.banner.url }}" style="max-width: 100%; height: auto" alt="Nature">
   </div>
+  {% endif %}
 
   <h3>{{ object.name }}</h3>
   <br>
@@ -56,7 +58,7 @@
         <i class="fa fa-edit"></i> Registry
       </a>
       {% else %}
-      <i class="fa fa-edit"></i> Registration is not available.
+      <i class="fa fa-edit"></i> Registration is not available yet.
       {% endif %}
     </li>
     <li>
@@ -65,45 +67,61 @@
         <i class="fa fa-file-text"></i> Feedback from attendees
       </a>
       {% else %}
-      <i class="fa fa-file-text"></i> Feedback from attendees is not available.
+      <i class="fa fa-file-text"></i> Feedback from attendees form is not available yet.
       {% endif %}
     </li>
   </ul>
 </section>
 
+{% if object.mission %}
 <section class="col-lg-12 uv-section">
-  <h4>Event Objective</h4>
+  <h4>Objective</h4>
   <p>{{ object.mission }}</p>
 </section>
+{% endif %}
 
 <section class="col-lg-12 uv-section">
   <h4>Syllabus</h4>
+  {% if object.topics.all %}
   <p>The event will be:</p>
   <ul>
     {% for topic in object.topics.all %}
     <li>{{ topic.name }}</li>
     {% endfor %}
   </ul>
+  {% else %}
+  <h4>Syllabus</h4>
+  <p>The Sylabus of the event is being prepared.</p>
+  {% endif %}
 </section>
 
+{% if object.venue %}
 <section class="col-lg-12 uv-section">
-  <h4>Event location</h4>
+  <h4>Venue</h4>
   <p>{{ object.venue }}</p>
 </section>
+{% endif %}
 
+{% if object.costs %}
 <section class="col-lg-12 uv-section">
   <h4>Resgistry cost</h4>
   <p>{{ object.costs }}</p>
 </section>
+{% endif %}
 
 <section class="col-lg-12 uv-section">
-  <h3>Syllabus</h3>
+  <h3>Program</h3>
+  {% if object.program_url %}
   <p>Program subject to changes</p>
   <div class="embed-responsive embed-responsive-16by9">
   <iframe width="800" height="600" src="{{ object.program_url }}"></iframe>
   </div>
+  {% else %}
+  <p>The agenda of the event is being prepared.</p>
+  {% endif %}
 </section>
 
+{% if object.speakers.all %}
 <section class="col-lg-12 uv-section">
   <h3>Speakers</h3>
   <br>
@@ -116,7 +134,9 @@
       <img src="{{ speaker.picture.url }}" width="150px" height="200px" alt="{{ speaker.name }}">
       </a>
       {% else %}
-      <img src="/media/img/people/no_image.jpg" width="150px" height="200px" alt="No image">
+      <a href="{% url 'person:member' speaker.pk %}">
+      <img src="{% static 'univalle/images/no_image.png' %}" width="150px" height="200px" alt="No image">
+      </a>
       {% endif %}
         <figcaption class="figure-caption text-center">
         <strong>{{ speaker.name }}</strong><br>
@@ -127,9 +147,11 @@
     {% endfor %}
   </div>
 </section>
+{% endif %}
 
+{% if object.memory_set.all %}
 <section class="col-lg-12 uv-section">
-  {% if object.memory_set.all %}
+  
   <h3>Memories</h3>
   <br>
   <div class="row">
@@ -143,31 +165,32 @@
     </div>
     {% endfor %}
   </div>
-  {% endif %}
 </section>
+{% endif %}
 
+{% if object.sponsors.all %}
 <section class="col-lg-12 uv-section">
   <h3>Sponsors</h3>
   <br>
   <div class="row">
     {% for sponsor in object.sponsors.all %}
-    <div class="col-md-3 uv-lab-members">
+    <div class="col-md-3">
       <figure class="figure">
-        <img src="{{ sponsor.image.url }}" width="150px" height="200px" alt="{{ sponsor.name }}">
+        <img src="{{ sponsor.image.url }}" width="80%" height="150px" alt="{{ sponsor.name }}">
         <!-- <div class="img-responsive"> -->
           <!-- <img src="{{ sponsor.image.url }}" width="100%" height="200px" alt="{{ sponsor.name }}"> -->
         <!-- </div> -->
         <figcaption class="figure-caption text-center">
-          <strong>{{ sponsor.name }}</strong>
+          <!-- <strong>{{ sponsor.name }}</strong> -->
         </figcaption>
       </figure>
     </div>
     {% endfor %}
   </div>
 </section>
+{% endif %}
+
 {% endblock %}
-
-
 
 
 {% block custom-bottom-js %}

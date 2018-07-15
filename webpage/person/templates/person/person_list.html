@@ -29,7 +29,7 @@
         {% if member.picture %}
         <img src="{{ member.picture.url }}" class="img-circle" width="100px" height="100px" alt="{{ member.name }}">
         {% else %}
-        <img src="/media/img/people/no_image.jpg" class="img-circle" width="100px" height="100px" alt="No image">
+        <img src="{% static 'univalle/images/no_image.png' %}" class="img-circle" width="100px" height="100px" alt="No image">
         {% endif %}
         </a>
         <figcaption class="figure-caption text-center">
@@ -63,7 +63,7 @@
         {% if member.picture %}
         <img src="{{ member.picture.url }}" class="img-circle" width="100px" height="100px" alt="{{ member.name }}">
         {% else %}
-        <img src="/media/img/people/no_image.jpg" class="img-circle" width="100px" height="100px" alt="No image">
+        <img src="{% static 'univalle/images/no_image.png' %}" class="img-circle" width="100px" height="100px" alt="No image">
         {% endif %}
         </a>
         <figcaption class="figure-caption text-center">
@@ -97,7 +97,7 @@
         {% if member.picture %}
         <img src="{{ member.picture.url }}" class="img-circle" width="100px" height="100px" alt="{{ member.name }}">
         {% else %}
-        <img src="/media/img/people/no_image.jpg" class="img-circle" width="100px" height="100px" alt="No image">
+        <img src="{% static 'univalle/images/no_image.png' %}" class="img-circle" width="100px" height="100px">
         {% endif %}
         </a>
         <figcaption class="figure-caption text-center">
