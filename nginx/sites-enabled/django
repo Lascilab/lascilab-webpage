@@ -8,6 +8,10 @@ server {
         alias /webpage/static;
     }
     
+    location /media {
+        alias /webpage/media;
+    }
+
     location /wiki {
         alias /srv/html;
     }
