@@ -6,17 +6,33 @@
 
 This is the source code of the "Lascilab" webpage, it was wrote using python3.6+.
 
+## Make a backup of the database data
+
+**Pleace make a backup of the database before perform the 'docker-compose down' command.**
+
+```bash
+docker-compose exec web ./manage.py dumpdata --indent 2 index person event auth.user > backup.json
+```
+
 ## For deploy in production
 
-### Removing older version instances
+### Update webpage changes
 
-locate in the *webpage* directory and perform the following commad.
+```bash
+git pull origin master
+```
+
+```bash
+docker-compose restart web
+```
+
+### Deploying a completely new version
+
+locate in the *webpage* directory and perform the following commad to remove the old version. 
 
 ```bash
 docker-compose down --volumes --rmi all --remove-orphans
 ```
-
-### Deploying new version
 
 Install Docker and Docker Compose.
 
